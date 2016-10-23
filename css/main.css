@@ -1,78 +1,91 @@
-/* 
-Project Name: Blank Template
-Client: Your Client
-Author: Your Name
-*/
-
-/******************************************
-/* COLOURS
-/*******************************************/
-
-/* add a list of colours used in the project */
-
-/******************************************
-/* SENSIBLE DEFAULTS                   
-/*******************************************/
+.grid-column {
+  float: left;
+  margin: 0;
+  padding: 0 20px;
+  /* match to .grid-container */ }
 
 * {
-     box-sizing: border-box;
-}
-img {
-	max-width:100%;
-}
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
 
-/******************************************
+img {
+  max-width: 100%; }
+
 /* TYPOGRAPHY
 /*******************************************/
-
-/* add type styles here */
-
-
 /******************************************
-/* LAYOUT                   
+/* LAYOUT
 /*******************************************/
+body {
+  font-size: 16px;
+  font-family: "Libre Franklin", sans-serif; }
 
 .site-container {
-	max-width: 960px;
-	margin: 0 auto;
-}
+  width: 100vw;
+  max-width: 1600px; }
 
 .site-header {
+  background: #ea444f; }
 
-}
-.site-content {
+.site-navigation {
+  padding: 0.8rem; }
+  .site-navigation ul {
+    list-style: none; }
 
-}
-.site-footer {
+.top-nav {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.2rem 0.5rem; }
+  .top-nav:hover {
+    border-bottom: 2px solid;
+    margin: -1px; }
 
-}
+.projects-nav-container {
+  width: 8.333%;
+  border: 1px solid black;
+  height: 100vh;
+  padding-left: 2rem; }
+  .projects-nav-container .project-nav {
+    position: relative;
+    height: 10rem;
+    border: 1px solid blue; }
+    .projects-nav-container .project-nav p {
+      position: absolute;
+      transform-origin: 0 0;
+      transform: rotate(-90deg) translate(-50%);
+      top: 50%;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 200;
+      width: 10rem; }
+
+.cv-container {
+  width: 91.663%;
+  border: 1px solid black; }
 
 /******************************************
 /* HELPER CLASSES
 /*******************************************/
-
-/* Clearfix */
-.clearfix:before,
-.clearfix:after {
-     content: " ";
-     display: table;
-}
-.clearfix:after {
-     clear:both;
-}
-
 .is-hidden {
-     display: none;
-}
-.is-visible {
-     display: block;
-}
+  display: none; }
 
+.is-visible {
+  display: block; }
+
+.grid-row {
+  margin: 0 -20px; }
+  .grid-row .cf:before,
+  .grid-row .cf:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .grid-row .cf:after {
+    clear: both; }
 
 /******************************************
-/* ADDITIONAL STYLES                   
+/* ADDITIONAL STYLES
 /*******************************************/
 
-
-
-
+/*# sourceMappingURL=main.css.map */
