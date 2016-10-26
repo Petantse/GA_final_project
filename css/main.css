@@ -1,9 +1,3 @@
-.grid-column {
-  float: left;
-  margin: 0;
-  padding: 0 20px;
-  /* match to .grid-container */ }
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -25,6 +19,11 @@ body {
   width: 100vw;
   max-width: 1600px; }
 
+.site-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+
 .site-header {
   background: #ea444f; }
 
@@ -42,10 +41,10 @@ body {
     margin: -1px; }
 
 .projects-nav-container {
-  width: 8.333%;
+  width: 4.1665%;
   border: 1px solid black;
-  height: 100vh;
-  padding-left: 2rem; }
+  height: 100%;
+  min-width: 3rem; }
   .projects-nav-container .project-nav {
     position: relative;
     height: 10rem;
@@ -58,31 +57,26 @@ body {
       text-align: center;
       font-size: 1rem;
       font-weight: 200;
-      width: 10rem; }
+      width: 10rem;
+      padding: 1rem; }
+
+.projects-container {
+  width: 24.999%; }
+  .projects-container .project-section {
+    display: flex;
+    flex-direction: column; }
+    .projects-container .project-section img {
+      width: 99.996%; }
 
 .cv-container {
-  width: 91.663%;
+  width: 66.664%;
   border: 1px solid black; }
 
 /******************************************
 /* HELPER CLASSES
 /*******************************************/
-.is-hidden {
-  display: none; }
-
 .is-visible {
   display: block; }
-
-.grid-row {
-  margin: 0 -20px; }
-  .grid-row .cf:before,
-  .grid-row .cf:after {
-    content: " ";
-    /* 1 */
-    display: table;
-    /* 2 */ }
-  .grid-row .cf:after {
-    clear: both; }
 
 /******************************************
 /* ADDITIONAL STYLES
