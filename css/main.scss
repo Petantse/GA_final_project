@@ -247,15 +247,17 @@ body{
         border-bottom: 5px solid transparent;
         // padding: 0.3rem 0;
         @include transition(all .3s ease);
+        text-shadow: 0 0 10px $brand-secondary;
       }
       .blurred_hover{
         // border-bottom: 5px solid $brand-secondary;
         color: $color-inverted;
+        text-shadow: 0 0 0 transparent;
         // @include animation('blur 4s 0');
       }
-      .animated{
-        @include animation('blur 4s infinite');
-      }
+      // .animated{
+      //   @include animation('blur 4s infinite');
+      // }
       .blurb-content{
         @include transition(all .3s ease);
       }

@@ -146,15 +146,11 @@ body {
         -moz-transition: all 0.3s ease;
         -ms-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
-        transition: all 0.3s ease; }
+        transition: all 0.3s ease;
+        text-shadow: 0 0 10px #451a2a; }
       .cv-container .blurb h1 .blurred_hover {
-        color: white; }
-      .cv-container .blurb h1 .animated {
-        -webkit-animation: blur 4s infinite;
-        -moz-animation: blur 4s infinite;
-        -ms-animation: blur 4s infinite;
-        -o-animation: blur 4s infinite;
-        animation: blur 4s infinite; }
+        color: white;
+        text-shadow: 0 0 0 transparent; }
       .cv-container .blurb h1 .blurb-content {
         -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
