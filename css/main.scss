@@ -1,15 +1,12 @@
 
-// Project Name: Blank Template
-// Client: Your Client
-// Author: Your Name
+// Project Name: Pet Stoyanova- personal portfolio
 //
 
-//******************************************
-//* VARIABLES
-//*******************************************
-
-$brand-color-primary: rgba(234, 68, 79, 1);
-$brand-color-secondary: rgba(69, 26, 42, 1);
+// VARIABLES
+//
+$brand-primary: rgba(234, 68, 79, 1);
+$brand-secondary: rgba(69, 26, 42, 1);
+$color-inverted: rgba(255, 255, 255, 1);
 
 $font-size-root: 16px;
 $font-size-xs: 0.667rem;
@@ -18,18 +15,84 @@ $font-size-md: 1.25rem;
 $font-size-lg: 2.25rem;
 $font-size-xl: 3.375rem;
 
+// TYPOGRAPHY
+//
+$font-root: 'Source Sans Pro', sans-serif;
 
+@mixin font($fontSize, $fontWeight){
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
 
+// LAYOUT
+//
 @mixin column-width($columns-number) {
    $width: $columns-number * 8.333; // based on 12 columns  grid 100/12 = 8.333
    width: $width * 1%;
  }
 
+@mixin media($breakpoint) {
 
-//******************************************
-//* SENSIBLE DEFAULTS
-//*******************************************
+ $bp-xs: "(max-width: 600px)";
+ $bp-md: "(max-width: 1200px)";
+ $bp-lg: "(max-width: 1600px)";
 
+ @if $breakpoint == xs {
+   @media #{$bp-xs} { @content; }
+ }
+ @else if $breakpoint == md {
+   @media #{$bp-md} { @content; }
+ }
+ @else if $breakpoint == lg {
+   @media #{$bp-lg}  { @content; }
+ }
+}
+
+// animation and transition mixins
+// https://goo.gl/HAzc2u
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// clearfix
+%clearfix {
+ &:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+}
+
+// SENSIBLE DEFAULTS
+//
 *{
   box-sizing: border-box;
   padding:0;
@@ -39,20 +102,27 @@ img {
 	max-width:100%;
 }
 
-//******************************************
-/* TYPOGRAPHY
-/*******************************************/
-
-$font-root: 'Libre Franklin', sans-serif;
-
-@mixin font($fontSize, $fontWeight){
-  font-size: $fontSize;
-  font-weight: $fontWeight;
+ul{
+  list-style:none;
 }
-/******************************************
-/* LAYOUT
-/*******************************************/
 
+//animations
+//
+
+@include keyframes(blur){
+  0%{
+    text-shadow: 0 0 0px $brand-secondary;
+  }
+  50%{
+    text-shadow: 0 0 10px $brand-secondary;
+  }
+  100%{
+    text-shadow: 0 0 0px $brand-secondary;
+  }
+}
+
+// SITE STYLING
+//
 body{
   font-size: $font-size-root;
   font-family: $font-root;
@@ -60,84 +130,232 @@ body{
 
 .site-container{
   width: 100vw;
-  max-width: 1600px;
+  background: $brand-primary;
 }
 
 .site-content{
+  height: 100vh;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  // flex-flow:<flex-direction> || <flex-wrap>;
+  flex-direction: column;
+  @include media(xs){
+    height: 500px;
+  };
+  // flex-wrap: nowrap;
+  // overflow: hidden;
 }
 
 .site-header{
-  background:$brand-color-primary;
-}
+  background:$brand-primary;
+  padding:0.5rem;
+
 // SITE NAVIGATION
-.site-navigation{
-  padding:0.8rem;
-  ul{
-    list-style:none;
+  @at-root .site-navigation{
+    padding:0.8rem;
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+    @extend %clearfix;
+    ul{
+      .name{
+        color: $color-inverted;
+        text-rendering: optimizeLegibility;
+        letter-spacing: 1px;
+        float: left;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: $font-size-md;
+        line-height: $font-size-md;
+        &:before{
+          content: "";
+          padding-left: $font-size-md;
+          padding-right: 5px;
+          margin-right: 1rem;
+          border: 5px solid $color-inverted;
+          background-color: $brand-secondary;
+        }
+      }
+      .top-nav{
+        float:right;
+        a{
+          text-decoration: none;
+          color: $brand-secondary;
+        }
+        .nav {
+          display: inline-block;
+          padding: 0 0.8rem;
+          margin-left: $font-size-md;
+          border-bottom: 2px solid transparent;
+          @include transition(all .3s ease);
+          @include media(xs){
+            padding:0 0.5rem;
+            margin-left: $font-size-xs;
+          };
+          &:hover{
+            border-bottom: 2px solid $brand-secondary;
+          }
+        }
+      }
+    }
   }
 }
 
-.top-nav{
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0.2rem 0.5rem;
-  &:hover{
-    border-bottom: 2px solid;
-    margin:-1px;
+// CV CONTAINER
+//
+@at-root .cv-container{
+  @include column-width(6);
+  margin:0 auto;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  @extend %clearfix;
+  @include media(md){
+    @include column-width(8);
+  };
+  @include media(xs){
+    @include column-width(10);
+  };
+  .brand{
+    width: inherit;
+    order: -1;
+    align-self: center;
+    position: absolute;
+    .logo{
+      min-height: 250px;
+      max-height: 300px;
+      opacity: 0.2;
+    }
+  }
+
+// BLURB
+//
+  .blurb{
+    align-self: flex-start;
+    order: 1;
+    z-index: 1;
+    h1{
+      font-weight: 900;
+      line-height: $font-size-xl;
+      display: block;
+      font-size: $font-size-xl;
+      margin: 4rem auto 5%;
+      color: $brand-secondary;
+      .blurred{
+        margin-left: -3px;
+        cursor: pointer;
+        display: inline-block;
+        color: transparent;
+        border-bottom: 5px solid transparent;
+        // padding: 0.3rem 0;
+        @include transition(all .3s ease);
+      }
+      .blurred_hover{
+        // border-bottom: 5px solid $brand-secondary;
+        color: $color-inverted;
+        // @include animation('blur 4s 0');
+      }
+      .animated{
+        @include animation('blur 4s infinite');
+      }
+      .blurb-content{
+        @include transition(all .3s ease);
+      }
+      .blurb-blurred{
+        color: transparent;
+        text-shadow: 0 0 10px $brand-secondary
+      }
+    }
+  }
+
+// SKILLS PANE
+//
+  .skills_hidden{
+    display: none;
+    margin-top: 6.7rem;
+    background: rgba(255, 255, 255, 1);
+    padding: 2rem;
+    position: absolute;
+    z-index: 2;
+    width: inherit;
+    @include transition(all .3s ease);
+  }
+  .skills_visible{
+    display: block;
+  }
+}
+@at-root .social-icons{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+  .line{
+    flex-grow: 2;
+    border-top: 5px solid $brand-secondary;
+  }
+  .icon{
+    text-decoration: none;
+    font-size: $font-size-md;
+    padding: 0.5rem 1rem;
+    display: inline;
+    align-self: flex-end;
+    color: rgba(255, 255, 255, 0.6);
+    @include transition(all .3s ease);
+    &:nth-child(2){
+      margin-left: 1rem;
+    }
+    &:hover{
+      transform: translateY(-3px);
+      color: rgba(255, 255, 255, 1);
+    }
   }
 }
 
 // PROJECT NAVIGATION
 //
-.projects-nav-container{
-  @include column-width(0.5);
-  border:1px solid black;
-  height: 100%;
-  min-width:3rem;
-
+@at-root .projects-nav-container{
+  align-self: flex-end;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  @include column-width(12);
+  height: auto;
+  // min-width:3rem;
+  min-height: 3.5rem;
+  align-content: space-between;
+  background: $brand-secondary;
+  color: $color-inverted;
   .project-nav{
-    position: relative;
-    height: 10rem;
-    border: 1px solid blue;
-
+    // position: relative;
+    width:100%;
+    color: rgba(255, 255, 255, 0.6);
+    @include transition(all .3s ease);
+    &:hover{
+      background: lighten($brand-secondary, 10%);
+      color: rgba(255, 255, 255, 1);
+    }
     p{
-      position: absolute;
-      transform-origin: 0 0;
-      transform: rotate(-90deg) translate(-50%);
-      top:50%;
+      color: inherit;
       text-align: center;
       @include font($font-size-sm, 200);
-      width: 10rem;
       padding: 1rem;
-      // border: 1px solid blue;
     }
   }
 }
 
+// PROJECTS CONTAINER
+//
 .projects-container{
-  @include column-width(3);
+  @include column-width(12);
+  display: flex;
+  flex-direction: column;
   .project-section{
-    display: flex;
-    flex-direction: column;
+
     img{
       @include column-width(12);
-
     }
   }
 }
 
-.cv-container{
-  @include column-width(8);
-  border:1px solid black;
-}
-
-.site-content {
-
-}
 .site-footer {
 
 }
@@ -151,23 +369,10 @@ body{
      display: block;
 }
 
-// clearfix
-%clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
 // .grid-row {
 //   margin:0 -20px;
 //   @extend %clearfix();
 // }
-
-
-
-
 
 /******************************************
 /* ADDITIONAL STYLES
