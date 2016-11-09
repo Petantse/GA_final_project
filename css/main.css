@@ -1,4 +1,4 @@
-.site-navigation:after, .cv-container:after {
+.site-navigation:after {
   content: "";
   display: table;
   clear: both; }
@@ -56,7 +56,9 @@ body {
   flex-direction: column; }
   @media (max-width: 600px) {
     .site-content {
-      height: 500px; } }
+      position: relative;
+      height: 100%;
+      padding-bottom: 10rem; } }
 
 .site-header {
   background: #ea444f;
@@ -160,21 +162,46 @@ body {
       .cv-container .blurb h1 .blurb-blurred {
         color: transparent;
         text-shadow: 0 0 10px #451a2a; }
-  .cv-container .skills_hidden {
-    display: none;
-    margin-top: 6.7rem;
-    background: white;
-    padding: 2rem;
-    position: absolute;
+  .cv-container .skills-container {
+    margin-top: 3.9rem;
     z-index: 2;
-    width: inherit;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-  .cv-container .skills_visible {
-    display: block; }
+    position: absolute;
+    width: inherit; }
+    .cv-container .skills-container .selector {
+      height: 3rem;
+      width: 220px; }
+    .cv-container .skills-container .skills_hidden {
+      display: none;
+      background: white;
+      padding: 2rem;
+      font-weight: 300;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+    .cv-container .skills-container .skills_visible {
+      display: flex;
+      flex-direction: column; }
+    .cv-container .skills-container .skills {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 2rem;
+      margin-bottom: 3rem; }
+      .cv-container .skills-container .skills h1 {
+        margin: 0.25rem auto; }
+    .cv-container .skills-container .full-resume {
+      text-decoration: none;
+      flex-grow: 10;
+      font-size: 1.25rem;
+      color: #451a2a;
+      font-weight: 600;
+      text-transform: capitalize;
+      padding: 0.5rem 1rem;
+      border: 2px solid #ea444f;
+      display: inline;
+      margin: 0 auto; }
 .social-icons {
   display: flex;
   flex-direction: row;
@@ -204,7 +231,7 @@ body {
 .projects-nav-container {
   align-self: flex-end;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: row;
   width: 99.996%;
   height: auto;
@@ -212,7 +239,12 @@ body {
   align-content: space-between;
   background: #451a2a;
   color: white; }
+  @media (max-width: 600px) {
+    .projects-nav-container {
+      position: absolute;
+      bottom: 0; } }
   .projects-nav-container .project-nav {
+    flex-basis: 25%;
     width: 100%;
     color: rgba(255, 255, 255, 0.6);
     -webkit-transition: all 0.3s ease;
@@ -229,12 +261,21 @@ body {
       font-size: 1rem;
       font-weight: 200;
       padding: 1rem; }
+input[type="radio"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
 .projects-container {
   width: 99.996%;
   display: flex;
   flex-direction: column; }
-  .projects-container .project-section img {
+  .projects-container img {
     width: 99.996%; }
+
+[id^="tab"]:checked + label {
+  background: #6a2841;
+  color: white; }
 
 /******************************************
 /* HELPER CLASSES
