@@ -24,7 +24,7 @@
 						<ul>
 							<li class="name">Pet Stoyanova</li>
 							<ul class="top-nav">
-								<li class="nav"><a  href="#">Work</a></li>
+								<li id="work" class="nav"><a  href="#projects">Work</a></li>
 								<li class="nav"><a  href="#">About</a></li>
 							</li>
 						</ul>
@@ -45,67 +45,66 @@
 							<!-- SOCIAL ICONS -->
 						<ul class="social-icons">
 							<div class="line"></div>
-							<a class="icon fa fa-linkedin" aria-hidden="true" href="#"></a>
-							<a class="icon fa fa-github-alt" aria-hidden="true" href="#"></a>
-							<a class="icon fa fa-codepen" aria-hidden="true" href="#"></a>
-							<a class="icon fa fa-behance" aria-hidden="true" href="#"></a>
+							<a class="icon fa fa-linkedin" aria-hidden="true" href="https://uk.linkedin.com/in/petstoyanova"></a>
+							<a class="icon fa fa-github-alt" aria-hidden="true" href="https://github.com/Petantse"></a>
+							<a class="icon fa fa-codepen" aria-hidden="true" href="https://codepen.io/Petantse/"></a>
+							<a class="icon fa fa-behance" aria-hidden="true" href="https://www.behance.net/pet_noto"></a>
+							<a class="icon fa fa-twitter" aria-hidden="true" href="https://twitter.com/petantse"></a>
 						</ul>
 						<!-- /SOCIAL ICONS -->
 					</div>
 					<!-- / BLURB -->
 					<!-- SKILLS PANE -->
-					<div class="skills_hidden">
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
-						<ul>
-							<li>UX</li>
-							<li>Interaction</li>
-							<li>Visual</li>
-							<li>Research</li>
-						</ul>
-						<h2 class="full-resume">Full resume</h2>
+					<div class="skills-container">
+						<div class="selector"></div>
+						<div class="skills_hidden">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</p>
+							<ul class="skills">
+								<li><h1>50%</h1>Visual</li>
+								<li><h1>25%</h1>Research &amp; UX</li>
+								<li><h1>25%</h1>Interaction</li>
+							</ul>
+							<a class="full-resume" href="#">Full resume</a>
+						</div>
 					</div>
 					<!-- /SKILLS PANE -->
-
 				</div>
 					<!-- /ABOUT -->
 				<!-- PROJECTS NAVIGATION -->
-				<div class="projects-nav-container">
-					<div class="project-nav">
-						<p>Project 1</p>
-					</div>
-					<div class="project-nav">
-						<p>Project 2</p>
-					</div>
-					<div class="project-nav">
-						<p>Project 3</p>
-					</div>
-					<div class="project-nav">
-						<p>Project 4</p>
-					</div>
+				<div id="projects" class="projects-nav-container">
+					<input type="radio" name="project-nav" id="tab1"/ >
+					<label class="project-nav" for="tab1"><p>Project 1</p></label>
+					<input type="radio" name="project-nav" id="tab2"/ >
+					<label class="project-nav" for="tab2"><p>Project 2</p></label>
+					<input type="radio" name="project-nav" id="tab3"/ >
+					<label class="project-nav" for="tab3"><p>Project 1</p></label>
+					<input type="radio" name="project-nav" id="tab4"/ >
+					<label class="project-nav" for="tab4"><p>Project 2</p></label>
 				</div>
 				<!-- / PROJECTS NAVIGATION -->
 			</main>
 			<!-- PROJECTS -->
 			<div class="projects-container">
-				<section class="project-section project1">
-					<img class="project-img" src="http://placehold.it/350x150" alt="placeholder image" />
-					<img class="project-img" src="http://placehold.it/350x150" alt="placeholder image" />
-					<img class="project-img" src="http://placehold.it/350x150" alt="placeholder image" />
+				<section id="project" class="tab1">
+					<img class="project-img cover-img" src="http://lorempixel.com/350/150/animals" alt="placeholder image" />
+					<!-- <img class="project-img" src="http://lorempixel.com/350/150/animals" alt="placeholder image" />
+					<img class="project-img" src="http://lorempixel.com/350/150/animals" alt="placeholder image" /> -->
 				</section>
-				<section class="project-section project2">
-					<img class="project-img" src="http://placehold.it/350x150" alt="placeholder image" />
-					<img class="project-img" src="http://placehold.it/350x150" alt="placeholder image" />
-					<img class="project-img" src="http://placehold.it/350x150" alt="placeholder image" />
+				<section id="project" class="tab2">
+					<img class="project-img cover-img" src="http://lorempixel.com/350/150/cats" alt="placeholder image" />
+					<!-- <img class="project-img" src="http://lorempixel.com/350/150/animals" alt="placeholder image" />
+					<img class="project-img" src="http://lorempixel.com/350/150/animals" alt="placeholder image" /> -->
 				</section>
+
 			</div>
 		<!-- / PROJECTS -->
 			<footer class="site-footer">
 				&copy; 2016
 			</footer>
 		</div><!-- .site-container -->
-		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
