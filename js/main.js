@@ -9,11 +9,11 @@ $( document ).ready(function() {
           }, 500);
       });
 
-//      $('.selector').hover(function(){
-//        $('.blurred').toggleClass('blurred_hover');
-//        $('.blurb-content').toggleClass('blurb-blurred');
-//        $('.skills_hidden').toggleClass('skills_visible');
-//      });
+      $('.selector').hover(function(){
+        $('.blurred').toggleClass('blurred_hover');
+        $('.blurb-content').toggleClass('blurb-blurred');
+        $('.skills_hidden').toggleClass('skills_visible');
+      });
 //
 //     $('.project-nav').on('click', function(){
 //       console.log("click");
