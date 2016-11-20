@@ -391,25 +391,25 @@ input[type="radio"] {
 //
 .projects-container{
   @include column-width(12);
-  // display: none;
-  display: flex;
-  flex-direction: column;
+  display: none;
+  // display: flex;
+  // flex-direction: column;
   // .project-section{
     img{
       @include column-width(12);
     }
   // }
 }
-// section{
-//   display: none;
-// }
-// .show-project{
-//   display: flex;
-//   flex-direction: column;
-// }
+section{
+   display: none;
+ }
+ .show-project{
+   display: flex;
+   flex-direction: column;
+ }
 
 
-[id^="tab"]:checked + label {
+[id^="#tab"]:checked + label {
   background: lighten($brand-secondary, 10%);
   color: rgba(255, 255, 255, 1);
 }

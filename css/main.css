@@ -268,12 +268,18 @@ input[type="radio"] {
 
 .projects-container {
   width: 99.996%;
-  display: flex;
-  flex-direction: column; }
+  display: none; }
   .projects-container img {
     width: 99.996%; }
 
-[id^="tab"]:checked + label {
+section {
+  display: none; }
+
+.show-project {
+  display: flex;
+  flex-direction: column; }
+
+[id^="#tab"]:checked + label {
   background: #6a2841;
   color: white; }
 
