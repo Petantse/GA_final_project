@@ -42,9 +42,16 @@ ul {
     text-shadow: 0 0 10px #451a2a; }
   100% {
     text-shadow: 0 0 0px #451a2a; } }
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 13px; }
+
 body {
-  font-size: 16px;
-  font-family: "Source Sans Pro", sans-serif; }
+  font-family: "Source Sans Pro", sans-serif;
+  position: relative;
+  width: 100%;
+  height: 100%; }
 
 .site-container {
   width: 100vw;
@@ -53,7 +60,8 @@ body {
 .site-content {
   height: 100vh;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  justify-content: space-between; }
   @media (max-width: 600px) {
     .site-content {
       position: relative;
@@ -108,10 +116,11 @@ body {
 
 .cv-container {
   width: 49.998%;
-  margin: 0 auto;
-  height: inherit;
+  width: 70%;
+  margin-top: -15%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: row;
+  align-self: center; }
   @media (max-width: 1200px) {
     .cv-container {
       width: 66.664%; } }
@@ -121,23 +130,28 @@ body {
   .cv-container .brand {
     width: inherit;
     order: -1;
-    align-self: center;
-    position: absolute; }
+    width: 20%;
+    display: inline-block;
+    order: 0;
+    height: auto; }
     .cv-container .brand .logo {
-      min-height: 250px;
-      max-height: 300px;
-      opacity: 0.2; }
+      width: 100%;
+      height: auto !important; }
   .cv-container .blurb {
     align-self: flex-start;
     order: 1;
-    z-index: 1; }
+    z-index: 1;
+    width: 70%;
+    display: inline-block;
+    position: relative; }
     .cv-container .blurb h1 {
       font-weight: 900;
-      line-height: 3.375rem;
-      display: block;
+      display: inline-block;
       font-size: 3.375rem;
-      margin: 4rem auto 5%;
-      color: #451a2a; }
+      margin: 0;
+      color: #451a2a;
+      width: 100%;
+      vertical-align: top; }
       .cv-container .blurb h1 .blurred {
         margin-left: -3px;
         cursor: pointer;
@@ -161,15 +175,17 @@ body {
         transition: all 0.3s ease; }
       .cv-container .blurb h1 .blurb-blurred {
         color: transparent;
-        text-shadow: 0 0 10px #451a2a; }
+        text-shadow: 0 0 10px #451a2a;
+        opacity: 0.7; }
   .cv-container .skills-container {
-    margin-top: 3.9rem;
     z-index: 2;
     position: absolute;
-    width: inherit; }
+    width: 100%;
+    top: 0; }
     .cv-container .skills-container .selector {
-      height: 3rem;
-      width: 220px; }
+      height: 4.5rem;
+      width: 230px;
+      margin-left: -2rem; }
     .cv-container .skills-container .skills_hidden {
       display: none;
       background: white;
@@ -183,13 +199,13 @@ body {
     .cv-container .skills-container .skills_visible {
       display: flex;
       flex-direction: column; }
-    .cv-container .skills-container .skills {
+    .cv-container .skills-container .skills-inner-content {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       margin-top: 2rem;
       margin-bottom: 3rem; }
-      .cv-container .skills-container .skills h1 {
+      .cv-container .skills-container .skills-inner-content h1 {
         margin: 0.25rem auto; }
     .cv-container .skills-container .full-resume {
       text-decoration: none;
@@ -202,6 +218,7 @@ body {
       border: 2px solid #ea444f;
       display: inline;
       margin: 0 auto; }
+
 .social-icons {
   display: flex;
   flex-direction: row;
@@ -228,6 +245,7 @@ body {
     .social-icons .icon:hover {
       transform: translateY(-3px);
       color: white; }
+
 .projects-nav-container {
   align-self: flex-end;
   display: flex;
@@ -235,7 +253,7 @@ body {
   flex-direction: row;
   width: 99.996%;
   height: auto;
-  min-height: 3.5rem;
+  height: 3.5rem;
   align-content: space-between;
   background: #451a2a;
   color: white; }
@@ -261,6 +279,7 @@ body {
       font-size: 1rem;
       font-weight: 200;
       padding: 1rem; }
+
 input[type="radio"] {
   position: absolute;
   top: -9999px;
@@ -282,6 +301,15 @@ section {
 [id^="#tab"]:checked + label {
   background: #6a2841;
   color: white; }
+
+.site-footer {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  background: #451a2a;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0; }
 
 /******************************************
 /* HELPER CLASSES

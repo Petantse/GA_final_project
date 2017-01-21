@@ -9,11 +9,34 @@ $( document ).ready(function() {
           }, 500);
       });
 
+      // $('.selector').hover(function(){
+      //   $('.blurred').toggleClass('blurred_hover');
+      //   $('.blurb-content').toggleClass('blurb-blurred');
+      //   $('.skills_hidden').toggleClass('skills_visible');
+      // });
+
       $('.selector').hover(function(){
         $('.blurred').toggleClass('blurred_hover');
         $('.blurb-content').toggleClass('blurb-blurred');
-        $('.skills_hidden').toggleClass('skills_visible');
+        $('#skills').toggleClass('skills_visible');
+        
       });
+      if ($('#skills').hasClass('skills_visible') || $('#skills:hover')){
+        $('#skills').hover(function(){
+          $('.blurred').toggleClass('blurred_hover');
+          $('.blurb-content').toggleClass('blurb-blurred');
+          $('.skills_hidden').toggleClass('skills_visible');
+        });
+      }
+      // else {
+      //   $('.selector').mouseout(function(){
+      //     $('.selector').css('paddingBottom', '0');
+      //     $('.blurred').removeClass('blurred_hover');
+      //     $('.blurb-content').removeClass('blurb-blurred');
+      //     $('#skills').removeClass('skills_visible');
+      //   });
+      // }
+
 //
 //     $('.project-nav').on('click', function(){
 //       console.log("click");
@@ -29,7 +52,7 @@ $( document ).ready(function() {
 // });
 
 
-	// when I click international
+	// when I click project nav button
 	$('.project-nav').on('click', function(){
 
 		var item = $(this);

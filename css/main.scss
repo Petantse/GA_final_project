@@ -8,7 +8,7 @@ $brand-primary: rgba(234, 68, 79, 1);
 $brand-secondary: rgba(69, 26, 42, 1);
 $color-inverted: rgba(255, 255, 255, 1);
 
-$font-size-root: 16px;
+$font-size-root: 13px;
 $font-size-xs: 0.667rem;
 $font-size-sm: 1rem;
 $font-size-md: 1.25rem;
@@ -123,9 +123,17 @@ ul{
 
 // SITE STYLING
 //
-body{
+html{
+  width: 100%;
+  height: 100%;
   font-size: $font-size-root;
+}
+body{
+  // font-size: $font-size-root;
   font-family: $font-root;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .site-container{
@@ -137,6 +145,7 @@ body{
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   @include media(xs){
     position: relative;
     height: 100%;
@@ -203,12 +212,20 @@ body{
 
 // CV CONTAINER
 //
-@at-root .cv-container{
+.cv-container{
   @include column-width(6);
-  margin:0 auto;
-  height: inherit;
+  // margin: 10% auto 0;
+  // height: inherit;
+  // display: flex;
+  // flex-direction: column;
+  // new
+  width: 70%;
+  margin-top: -15%;
+  // height: inherit;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-self: center;
+  // new
   @include media(md){
     @include column-width(8);
   };
@@ -218,12 +235,22 @@ body{
   .brand{
     width: inherit;
     order: -1;
-    align-self: center;
-    position: absolute;
+    // align-self: center;
+    // position: absolute;
+    //new
+    width: 20%;
+    display: inline-block;
+    order: 0;
+    height: auto;
+    //new
     .logo{
-      min-height: 250px;
-      max-height: 300px;
-      opacity: 0.2;
+      // min-height: 250px;
+      // max-height: 300px;
+      // opacity: 0.2;
+      //new
+      width: 100%;
+      height: auto !important;
+      //new
     }
   }
 
@@ -233,13 +260,20 @@ body{
     align-self: flex-start;
     order: 1;
     z-index: 1;
+    //new
+    width: 70%;
+    display: inline-block;
+    position: relative;
+    //new
     h1{
       font-weight: 900;
-      line-height: $font-size-xl;
-      display: block;
+      // line-height: $font-size-xl;
+      display: inline-block;
       font-size: $font-size-xl;
-      margin: 4rem auto 5%;
+      margin: 0;
       color: $brand-secondary;
+      width: 100%;
+      vertical-align: top;
       .blurred{
         margin-left: -3px;
         cursor: pointer;
@@ -264,7 +298,8 @@ body{
       }
       .blurb-blurred{
         color: transparent;
-        text-shadow: 0 0 10px $brand-secondary
+        text-shadow: 0 0 10px $brand-secondary;
+        opacity: 0.7;
       }
     }
   }
@@ -272,29 +307,35 @@ body{
 // SKILLS PANE
 //
   .skills-container{
-    margin-top: 3.9rem;
     z-index: 2;
     position: absolute;
-    width: inherit;
+    width: 100%;
+    top: 0;
     .selector{
-      height:3rem;
-      width: 220px;
+      height: 4.5rem;
+      width: 230px;
+      margin-left: -2rem;
+      // position: absolute;
+      // z-index: 2;
+      // top: 0;
+      // left: 0;
     }
     .skills_hidden{
-      display:none;
+      display: none;
       background: rgba(255, 255, 255, 1);
       padding: 2rem;
       font-weight: 300;
       // display: flex;
       // flex-direction: column;
       @include transition(all .3s ease);
+      // margin-top: -1rem;
     }
     .skills_visible{
       // display: block;
       display: flex;
       flex-direction: column;
     }
-    .skills{
+    .skills-inner-content{
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -318,7 +359,7 @@ body{
     }
   }
 }
-@at-root .social-icons{
+.social-icons{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -348,7 +389,7 @@ body{
 
 // PROJECT NAVIGATION
 //
-@at-root .projects-nav-container{
+.projects-nav-container{
   align-self: flex-end;
   display: flex;
   flex-wrap: wrap;
@@ -356,7 +397,7 @@ body{
   @include column-width(12);
   height: auto;
   // min-width:3rem;
-  min-height: 3.5rem;
+  height: 3.5rem;
   align-content: space-between;
   background: $brand-secondary;
   color: $color-inverted;
@@ -420,7 +461,13 @@ section{
 // }
 
 .site-footer {
-
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  background: $brand-secondary;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
 }
 
 /******************************************
