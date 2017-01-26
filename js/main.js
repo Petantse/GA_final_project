@@ -2,6 +2,10 @@ $( document ).ready(function() {
     // $('.skills').hide();
     console.log( "it works" );
 
+    $("#close").click(function(){
+      $('.welcome').fadeOut(500).css('display', 'none');
+    });
+
     /*Scroll transition to anchor*/
     $(".project-nav").click(function() {
           $('html, body').animate({

@@ -80,6 +80,34 @@ body {
   position: relative;
 }
 
+.welcome {
+  display: block;
+  background-color: #451a2a;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  padding: 2rem;
+  z-index: 3;
+}
+.welcome .welcome-message {
+  color: white;
+  font-weight: 300;
+}
+.welcome .welcome-message span {
+  font-weight: 900;
+}
+.welcome #close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  color: white;
+  opacity: 0.8;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+  cursor: pointer;
+}
+
 .site-content {
   min-height: 100vh;
   display: flex;

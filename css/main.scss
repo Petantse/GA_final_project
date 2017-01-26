@@ -142,6 +142,34 @@ body{
   position: relative;
 }
 
+.welcome{
+  display: block;
+  background-color: $brand-secondary;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  padding: 2rem;
+  z-index: 3;
+  .welcome-message{
+    color: $color-inverted;
+    font-weight: 300;
+    span{
+      font-weight: 900;
+    }
+  }
+  #close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    color: $color-inverted;
+    opacity: 0.8;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    cursor: pointer;
+  }
+}
+
 .site-content{
   min-height: 100vh;
   display: flex;
