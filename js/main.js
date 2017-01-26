@@ -29,8 +29,9 @@ $( document ).ready(function() {
             $('#projects').css('position', 'fixed');
             $('#projects').css('top', '0');
         } else {
-            $('#projects').css('position', 'static');
-            $('#projects').css('top', projectNavTop);
+            $('#projects').css('position', 'absolute');
+            $('#projects').css('bottom', '0');
+            $('#projects').css('top', '');
         }
     });
 
