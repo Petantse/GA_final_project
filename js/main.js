@@ -3,23 +3,43 @@ $( document ).ready(function() {
     console.log( "it works" );
 
     /*Scroll transition to anchor*/
-    $("#work, .project-nav").click(function() {
+    $(".project-nav").click(function() {
           $('html, body').animate({
               scrollTop: $("#projects").offset().top
           }, 500);
-      });
 
-      // $('.selector').hover(function(){
-      //   $('.blurred').toggleClass('blurred_hover');
-      //   $('.blurb-content').toggleClass('blurb-blurred');
-      //   $('.skills_hidden').toggleClass('skills_visible');
-      // });
+    });
+    $("#work").click(function() {
+          $('html, body').animate({
+              scrollTop: $("#projects").offset().top
+          }, 500);
+
+          // show projects container
+          $('.projects-container').addClass('show-project');
+          // show project
+          $('#tab1').addClass('show-project');
+          $('#tab1.project-nav').prop('checked', true);
+
+    });
+
+    var projectNavTop = $('#projects').offset().top;
+
+    $(window).scroll(function(){
+        if ($(this).scrollTop() >= projectNavTop) {
+            $('#projects').css('position', 'fixed');
+            $('#projects').css('top', '0');
+        } else {
+            $('#projects').css('position', 'static');
+            $('#projects').css('top', projectNavTop);
+        }
+    });
+
 
       $('.selector').hover(function(){
         $('.blurred').toggleClass('blurred_hover');
         $('.blurb-content').toggleClass('blurb-blurred');
         $('#skills').toggleClass('skills_visible');
-        
+
       });
       if ($('#skills').hasClass('skills_visible') || $('#skills:hover')){
         $('#skills').hover(function(){
@@ -28,28 +48,6 @@ $( document ).ready(function() {
           $('.skills_hidden').toggleClass('skills_visible');
         });
       }
-      // else {
-      //   $('.selector').mouseout(function(){
-      //     $('.selector').css('paddingBottom', '0');
-      //     $('.blurred').removeClass('blurred_hover');
-      //     $('.blurb-content').removeClass('blurb-blurred');
-      //     $('#skills').removeClass('skills_visible');
-      //   });
-      // }
-
-//
-//     $('.project-nav').on('click', function(){
-//       console.log("click");
-//       var storeClass = $('#project').attr('class');
-//       var storeID = $('.project-nav').attr('id');
-//       if(storeID = storeClass){
-//         $('#project ,.projects-container').addClass('.show-project');
-//         console.log("yey");
-//       }else{
-//         console.log("ney");
-//       };
-//     });
-// });
 
 
 	// when I click project nav button

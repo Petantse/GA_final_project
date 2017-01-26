@@ -33,8 +33,8 @@ $font-root: 'Source Sans Pro', sans-serif;
 
 @mixin media($breakpoint) {
 
- $bp-xs: "(max-width: 600px)";
- $bp-md: "(max-width: 1200px)";
+ $bp-xs: "(max-width: 500px)";
+ $bp-md: "(max-width: 900px)";
  $bp-lg: "(max-width: 1600px)";
 
  @if $breakpoint == xs {
@@ -131,7 +131,7 @@ html{
 body{
   // font-size: $font-size-root;
   font-family: $font-root;
-  position: relative;
+  // position: relative;
   width: 100%;
   height: 100%;
 }
@@ -139,10 +139,11 @@ body{
 .site-container{
   width: 100vw;
   background: $brand-primary;
+  position: relative;
 }
 
 .site-content{
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -150,7 +151,8 @@ body{
     position: relative;
     height: 100%;
     padding-bottom: 10rem;
-  };
+    justify-content: flex-start;
+  }
   // flex-wrap: nowrap;
   // overflow: hidden;
 }
@@ -160,13 +162,20 @@ body{
   padding:0.5rem;
 
 // SITE NAVIGATION
-  @at-root .site-navigation{
-    padding:0.8rem;
+  .site-navigation{
+    padding-top:0.8rem;
     max-width: 1250px;
     width: 100%;
     margin: 0 auto;
     @extend %clearfix;
     ul{
+       li:first-child{
+        display: none;
+      }
+      .brand-mini{
+        width: 80px;
+        height: 100%;
+      }
       .name{
         color: $color-inverted;
         text-rendering: optimizeLegibility;
@@ -181,7 +190,7 @@ body{
           padding-left: $font-size-md;
           padding-right: 5px;
           margin-right: 1rem;
-          border: 5px solid $color-inverted;
+          border: 3px solid $color-inverted;
           background-color: $brand-secondary;
         }
       }
@@ -193,17 +202,35 @@ body{
         }
         .nav {
           display: inline-block;
-          padding: 0 0.8rem;
+          padding: 0 1rem 0.8rem 1rem;
           margin-left: $font-size-md;
           border-bottom: 2px solid transparent;
           @include transition(all .3s ease);
           @include media(xs){
             padding:0 0.5rem;
             margin-left: $font-size-xs;
-          };
+          }
+          a{
+            font-size: 1.25rem;
+          }
           &:hover{
             border-bottom: 2px solid $brand-secondary;
           }
+        }
+      }
+      @include media(xs){
+        li:first-child{
+          display: inline-block;
+          float: left;
+        }
+        .name{
+          padding-top: 1.25rem;
+          &:before{
+            display: none;
+          }
+        }
+        .top-nav{
+          padding-top: 1.25rem;
         }
       }
     }
@@ -213,61 +240,39 @@ body{
 // CV CONTAINER
 //
 .cv-container{
-  @include column-width(6);
-  // margin: 10% auto 0;
-  // height: inherit;
-  // display: flex;
-  // flex-direction: column;
-  // new
-  width: 70%;
+  @include column-width(8);
   margin-top: -15%;
-  // height: inherit;
   display: flex;
   flex-direction: row;
   align-self: center;
-  // new
-  @include media(md){
-    @include column-width(8);
-  };
-  @include media(xs){
-    @include column-width(10);
-  };
   .brand{
     width: inherit;
-    order: -1;
-    // align-self: center;
-    // position: absolute;
-    //new
-    width: 20%;
+    align-self: flex-start;
+    max-width: 150px;
     display: inline-block;
-    order: 0;
     height: auto;
-    //new
+    margin-top: 0.7rem;
     .logo{
-      // min-height: 250px;
-      // max-height: 300px;
-      // opacity: 0.2;
-      //new
       width: 100%;
+      max-height: 250px;
       height: auto !important;
-      //new
+    }
+    @include media(xs){
+      display: none;
     }
   }
-
-// BLURB
-//
+  // BLURB
+  //
   .blurb{
-    align-self: flex-start;
-    order: 1;
-    z-index: 1;
-    //new
+    align-self: center;
+    text-align: left;
+    flex-grow: 2;
+    // order: 1;
+    // z-index: 1;
     width: 70%;
     display: inline-block;
-    position: relative;
-    //new
     h1{
       font-weight: 900;
-      // line-height: $font-size-xl;
       display: inline-block;
       font-size: $font-size-xl;
       margin: 0;
@@ -280,12 +285,10 @@ body{
         display: inline-block;
         color: transparent;
         border-bottom: 5px solid transparent;
-        // padding: 0.3rem 0;
         @include transition(all .3s ease);
         text-shadow: 0 0 10px $brand-secondary;
       }
       .blurred_hover{
-        // border-bottom: 5px solid $brand-secondary;
         color: $color-inverted;
         text-shadow: 0 0 0 transparent;
         // @include animation('blur 4s 0');
@@ -303,9 +306,11 @@ body{
       }
     }
   }
-
-// SKILLS PANE
-//
+  .blurb-inner{
+    position: relative;
+  }
+  // SKILLS PANE
+  //
   .skills-container{
     z-index: 2;
     position: absolute;
@@ -356,6 +361,23 @@ body{
       border: 2px solid $brand-primary;
       display: inline;
       margin:0 auto;
+    }
+  }
+  @include media(md){
+    @include column-width(10);
+    // flex-direction: column;
+    // margin: 10% 0;
+    // .blurb{
+    //   width: 100%;
+    // }
+  }
+  @include media(xs){
+    @include column-width(12);
+    flex-direction: column;
+    .blurb{
+      margin: 7rem 0 2rem 0;
+      padding: 0 5%;
+      width: 100%;
     }
   }
 }
