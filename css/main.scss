@@ -150,11 +150,15 @@ body{
   top: 0;
   padding: 2rem;
   z-index: 3;
+  width: 100%;
   .welcome-message{
     color: $color-inverted;
     font-weight: 300;
     span{
       font-weight: 900;
+      font-size: $font-size-lg;
+      margin-bottom: 0.8rem;
+      display: block;
     }
   }
   #close{
@@ -172,15 +176,16 @@ body{
 
 .site-content{
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  position: relative;
   @include media(xs){
-    position: relative;
+    // position: relative;
     height: 100%;
-    padding-bottom: 0;
-    margin: auto 0;
-    justify-content: flex-start;
+    // padding-bottom: 0;
+    // margin: auto 0;
+    // justify-content: flex-start;
   }
   // flex-wrap: nowrap;
   // overflow: hidden;
@@ -270,10 +275,14 @@ body{
 //
 .cv-container{
   @include column-width(8);
-  margin-top: -15%;
   display: flex;
   flex-direction: row;
   align-self: center;
+  height: 100%;
+  margin: 10% auto 0;
+  @include media(xs){
+    margin-top: 0;
+  }
   .brand{
     width: inherit;
     align-self: flex-start;
@@ -404,7 +413,7 @@ body{
     @include column-width(12);
     flex-direction: column;
     .blurb{
-      margin: 7rem 0 2rem 0;
+      margin: 2rem 0;
       padding: 0 5%;
       width: 100%;
     }
@@ -441,7 +450,7 @@ body{
 // PROJECT NAVIGATION
 //
 .projects-nav-container{
-  align-self: flex-end;
+  // align-self: flex-end;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -452,6 +461,8 @@ body{
   align-content: space-between;
   background: $brand-secondary;
   color: $color-inverted;
+  position: absolute;
+  bottom: 0;
   @include media(xs){
     position: absolute;
     bottom: 0;
@@ -494,6 +505,23 @@ input[type="radio"] {
 }
 section{
    display: none;
+   color: rgba(255, 255, 255, 1);
+   .section-item{
+     background-color: lighten($brand-secondary, 10%);
+     padding: 1.5rem 1.5rem 0 1.5rem;
+     &:last-of-type{
+       padding-bottom: 1.5rem;
+     }
+   }
+   .insection-title{
+     padding: 1.5rem 0;
+     font-size: $font-size-lg;
+   }
+   .insection-text{
+     padding: 0 0 1.5rem;
+     font-size: $font-size-md;
+     font-weight: 300;
+   }
  }
  .show-project{
    display: flex;
@@ -510,6 +538,26 @@ section{
 //   display: flex;
 //   flex-direction: column;
 // }
+
+.bottom-nav{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  a{
+    background-color: rgba(69, 26, 42, 0.8);
+    padding: 0.5rem 1.5rem 1rem;
+    display: block;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+    &.fa{
+      text-align: center;
+      padding-bottom: 0;
+      padding-top: 1rem;
+    }
+  }
+}
 
 .site-footer {
   width: 100%;

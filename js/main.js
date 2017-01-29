@@ -2,9 +2,15 @@ $( document ).ready(function() {
     // $('.skills').hide();
     console.log( "it works" );
 
+    // close welcome message
     $("#close").click(function(){
-      $('.welcome').fadeOut(500).css('display', 'none');
+      $('.welcome').fadeOut(500);
     });
+
+    $(window).click(function(){
+      $('.welcome').fadeOut(500);
+    });
+
 
     /*Scroll transition to anchor*/
     $(".project-nav").click(function() {
@@ -32,10 +38,12 @@ $( document ).ready(function() {
         if ($(this).scrollTop() >= projectNavTop) {
             $('#projects').css('position', 'fixed');
             $('#projects').css('top', '0');
+            $('.bottom-nav').fadeIn(350);
         } else {
             $('#projects').css('position', 'absolute');
             $('#projects').css('bottom', '0');
             $('#projects').css('top', '');
+            $('.bottom-nav').fadeOut(350);
         }
     });
 

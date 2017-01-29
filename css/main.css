@@ -88,6 +88,7 @@ body {
   top: 0;
   padding: 2rem;
   z-index: 3;
+  width: 100%;
 }
 .welcome .welcome-message {
   color: white;
@@ -95,6 +96,9 @@ body {
 }
 .welcome .welcome-message span {
   font-weight: 900;
+  font-size: 2.25rem;
+  margin-bottom: 0.8rem;
+  display: block;
 }
 .welcome #close {
   position: absolute;
@@ -110,17 +114,11 @@ body {
 
 .site-content {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
 }
 @media (max-width: 500px) {
   .site-content {
-    position: relative;
     height: 100%;
-    padding-bottom: 0;
-    margin: auto 0;
-    justify-content: flex-start;
   }
 }
 
@@ -207,10 +205,16 @@ body {
 
 .cv-container {
   width: 66.664%;
-  margin-top: -15%;
   display: flex;
   flex-direction: row;
   align-self: center;
+  height: 100%;
+  margin: 10% auto 0;
+}
+@media (max-width: 500px) {
+  .cv-container {
+    margin-top: 0;
+  }
 }
 .cv-container .brand {
   width: inherit;
@@ -337,7 +341,7 @@ body {
     flex-direction: column;
   }
   .cv-container .blurb {
-    margin: 7rem 0 2rem 0;
+    margin: 2rem 0;
     padding: 0 5%;
     width: 100%;
   }
@@ -376,7 +380,6 @@ body {
 }
 
 .projects-nav-container {
-  align-self: flex-end;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -386,6 +389,8 @@ body {
   align-content: space-between;
   background: #451a2a;
   color: white;
+  position: absolute;
+  bottom: 0;
 }
 @media (max-width: 500px) {
   .projects-nav-container {
@@ -431,6 +436,23 @@ input[type="radio"] {
 
 section {
   display: none;
+  color: white;
+}
+section .section-item {
+  background-color: #6a2841;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+section .section-item:last-of-type {
+  padding-bottom: 1.5rem;
+}
+section .insection-title {
+  padding: 1.5rem 0;
+  font-size: 2.25rem;
+}
+section .insection-text {
+  padding: 0 0 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 300;
 }
 
 .show-project {
@@ -441,6 +463,26 @@ section {
 [id^="#tab"]:checked + label {
   background: #6a2841;
   color: white;
+}
+
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottom-nav a {
+  background-color: rgba(69, 26, 42, 0.8);
+  padding: 0.5rem 1.5rem 1rem;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+.bottom-nav a.fa {
+  text-align: center;
+  padding-bottom: 0;
+  padding-top: 1rem;
 }
 
 .site-footer {

@@ -19,14 +19,14 @@
 		<div class="site-container">
 			<div class="welcome">
 				<h3 class="welcome-message"><span>Hello there!</span>
-					<br> Thanks for visiting. This website is a work-in-progress, so please forgive its unpolished state. You are welcome to have a look around and get in touch!</h3>
+					Thanks for visiting. This website is a work-in-progress, so please forgive its unpolished state. You are welcome to have a look around and get in touch!</h3>
 				<div id="close">
 					<i class="fa fa-times" aria-hidden="true"></i>
 				</div>
 			</div>
 			<main class="site-content">
 				<!-- SITE HEADER -->
-				<header class="site-header">
+				<header id="header" class="site-header">
 					<nav class="site-navigation">
 						<ul>
 							<li>
@@ -37,7 +37,7 @@
 							<li class="name">Pet Stoyanova</li>
 							<ul class="top-nav">
 								<li id="work" class="nav"><a  href="#projects">Work</a></li>
-								<li class="nav"><a  href="#">About</a></li>
+								<!-- <li class="nav"><a  href="#">About</a></li> -->
 							</li>
 						</ul>
 					</nav>
@@ -91,20 +91,44 @@
 				<!-- PROJECTS NAVIGATION -->
 				<div id="projects" class="projects-nav-container">
 					<input type="radio" name="project-nav" id="#tab1"/ >
-					<label class="project-nav" for="#tab1"><p>Project 1</p></label>
+					<label class="project-nav" for="#tab1"><p>Bloom VLE</p></label>
 					<input type="radio" name="project-nav" id="#tab2"/ >
 					<label class="project-nav" for="#tab2"><p>Teru Teru</p></label>
 					<input type="radio" name="project-nav" id="#tab3"/ >
-					<label class="project-nav" for="#tab3"><p>Project 1</p></label>
+					<label class="project-nav" for="#tab3"><p>Personal Branding</p></label>
 					<input type="radio" name="project-nav" id="#tab4"/ >
-					<label class="project-nav" for="#tab4"><p>Project 2</p></label>
+					<label class="project-nav" for="#tab4"><p>Graphics collection</p></label>
 				</div>
 				<!-- / PROJECTS NAVIGATION -->
 			</main>
 			<!-- PROJECTS -->
 			<div class="projects-container">
 				<section id="tab1" class="tab1">
-
+					<ul>
+						<li class="section-item cover-img">
+							<h2 class="insection-title">User Personas</h2>
+							<img class="project-img" src="pix/bloom-1.png" alt="6 user personas" />
+						</li>
+						<li class="section-item">
+							<h2 class="insection-title">Claudia: our first-year student</h2>
+							<p class="insection-text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+							<img class="project-img" src="pix/bloom-2.png" alt="Claudia persona" />
+						</li>
+						<li class="section-item">
+							<h2 class="insection-title">User Journeys</h2>
+							<img class="project-img" src="pix/bloom-3.png" alt="placeholder image" />
+						</li>
+						<li class="section-item">
+							<h2 class="insection-title">Bloom Custom Icon Font</h2>
+							<img class="project-img" src="pix/bloom-4.png" alt="placeholder image" />
+						</li>
+						<li class="section-item">
+							<h2 class="insection-title">Activity Icons</h2>
+							<img class="project-img" src="pix/bloom-5.png" alt="placeholder image" />
+						</li>
+					</ul>
 				</section>
 
 				<section id="tab2" class="tab2">
@@ -122,18 +146,26 @@
 				</section>
 
 				<section id="tab3" class="tab3">
-					<img class="project-img cover-img" src="http://lorempixel.com/350/150/animals" alt="placeholder image" />
-					<!-- <img class="project-img" src="http://lorempixel.com/350/150/animals" alt="placeholder image" />
-					<img class="project-img" src="http://lorempixel.com/350/150/animals" alt="placeholder image" /> -->
+					<img class="project-img cover-img" src="pix/brand-1.png" alt="placeholder image" />
+					<img class="project-img" src="pix/brand-2.gif" alt="placeholder image" />
+					<img class="project-img" src="pix/brand-3.png" alt="placeholder image" />
+					<img class="project-img" src="pix/brand-4.png" alt="placeholder image" />
+					<img class="project-img" src="pix/brand-5.png" alt="placeholder image" />
+					<img class="project-img" src="pix/brand-6.png" alt="placeholder image" />
 				</section>
 
 				<section id="tab4" class="tab4">
-					<img class="project-img cover-img" src="http://lorempixel.com/350/150/cats" alt="placeholder image" />
-					<!-- <img class="project-img" src="http://lorempixel.com/350/150/animals" alt="placeholder image" />
-					<img class="project-img" src="http://lorempixel.com/350/150/animals" alt="placeholder image" /> -->
+					<img class="project-img cover-img" src="pix/misc-1.png" alt="placeholder image" />
+					<img class="project-img" src="pix/misc-2.png" alt="placeholder image" />
 				</section>
 
 			</div>
+			<nav>
+				<ul class="bottom-nav">
+					<li class="nav"><a class="fa fa-chevron-up" aria-hidden="true" href="#header"></a></li>
+					<li class="nav"><a href="#header">About</a></li>
+				</ul>
+			</nav>
 		<!-- / PROJECTS -->
 			<footer class="site-footer">
 				&copy; 2017
