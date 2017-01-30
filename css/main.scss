@@ -514,6 +514,10 @@ input[type="radio"] {
 section{
    display: none;
    color: rgba(255, 255, 255, 1);
+   .section-title{
+     font-size: $font-size-xl;
+     text-align: center;
+   }
    .section-item{
      background-color: lighten($brand-secondary, 10%);
      padding: 1.5rem 1.5rem 0 1.5rem;
@@ -521,7 +525,30 @@ section{
        padding-bottom: 1.5rem;
      }
    }
+   .insection-inverted{
+     background: rgba(255, 255, 255, 1);
+     width: 100%;
+     text-align: center;
+     color: $brand-secondary;
+     padding: 2rem;
+     .thumbs{
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       max-width: 900px;
+       margin: 0 auto;
+       li{
+         flex-grow: 1;
+         text-align: center;
+       }
+       .thumb-img{
+         max-width: 100px;
+       }
+     }
+   }
    .insection-title{
+     text-align: center;
      padding: 1.5rem 0;
      font-size: $font-size-lg;
    }

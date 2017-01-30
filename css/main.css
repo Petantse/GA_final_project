@@ -446,6 +446,10 @@ section {
   display: none;
   color: white;
 }
+section .section-title {
+  font-size: 3.375rem;
+  text-align: center;
+}
 section .section-item {
   background-color: #6a2841;
   padding: 1.5rem 1.5rem 0 1.5rem;
@@ -453,7 +457,30 @@ section .section-item {
 section .section-item:last-of-type {
   padding-bottom: 1.5rem;
 }
+section .insection-inverted {
+  background: white;
+  width: 100%;
+  text-align: center;
+  color: #451a2a;
+  padding: 2rem;
+}
+section .insection-inverted .thumbs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+}
+section .insection-inverted .thumbs li {
+  flex-grow: 1;
+  text-align: center;
+}
+section .insection-inverted .thumbs .thumb-img {
+  max-width: 100px;
+}
 section .insection-title {
+  text-align: center;
   padding: 1.5rem 0;
   font-size: 2.25rem;
 }
