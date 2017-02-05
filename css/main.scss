@@ -160,12 +160,12 @@ body{
     color: $color-inverted;
     font-weight: 300;
     text-align: left;
-    // span{
-    //   font-weight: 900;
-    //   font-size: $font-size-lg;
-    //   margin-bottom: 0.8rem;
-    //   display: block;
-    // }
+    span{
+      font-weight: 900;
+      font-size: $font-size-lg;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
   }
   #close{
     display: inline-block;

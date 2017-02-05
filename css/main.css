@@ -100,6 +100,12 @@ body {
   font-weight: 300;
   text-align: left;
 }
+.welcome .welcome-message span {
+  font-weight: 900;
+  font-size: 2.25rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
 .welcome #close {
   display: inline-block;
   color: white;
