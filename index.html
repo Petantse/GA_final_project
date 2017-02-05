@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="description" content="site description goes here">
+		<meta name="description" content="Petya Stoyanova // Designer, front-end developer, illustration enthusiast and orchid hoarder. Welcome!">
 		<meta name="keywords" content="interaction designer, digital designer, visual designer">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet">
@@ -18,10 +18,11 @@
 	<body>
 		<div class="site-container">
 			<div class="welcome">
-				<h3 class="welcome-message"><span>Hello there!</span>
-					Thanks for visiting. This website is a work-in-progress, so please forgive its unpolished state. You are welcome to have a look around and get in touch!</h3>
-				<div id="close">
-					<i class="fa fa-times" aria-hidden="true"></i>
+				<div>
+					<h3 class="welcome-message"><span>Hello there!</span>
+						Thanks for visiting. This website is a work-in-progress, so please forgive its unpolished state. You are welcome to have a look around and get in touch!
+					</h3>
+					<p class="fa fa-times" id="close" aria-hidden="true"></p>
 				</div>
 			</div>
 			<main class="site-content">
@@ -59,9 +60,13 @@
 								<div class="selector"></div>
 								<div id="skills" class="skills_hidden">
 									<p>
-										<span>What kind of designer am I?</span> Lines could be a bit blurry indeed. I consider myself a
-										multidisciplinary designer with expertise in visual design, inclined towards
-										UX &amp; UI design. Within my current role in the Research &amp; Development team, I've undertaken
+										What kind of designer am I? Lines could be a bit blurry indeed.
+									</p>
+									<p>
+										I am a multidisciplinary designer with expertise in visual design and inclined towards UX &amp; UI design.
+									</p>
+									<p>
+										Within my current role in the Research &amp; Development team at CoSector, University of London , I've undertaken
 										various responsibilities. These range from assisting in interviews and testing sessions with users,
 										compiling research outputs, building personas, user journeys and flows, building low and high fidelity
 										prototypes, UI design and technical implementation.
@@ -99,81 +104,208 @@
 				</div>
 					<!-- /ABOUT -->
 				<!-- PROJECTS NAVIGATION -->
-				<div id="projects" class="projects-nav-container">
-					<input type="radio" name="project-nav" id="#tab1"/ >
-					<label class="project-nav" for="#tab1"><p>Bloom VLE</p></label>
-					<input type="radio" name="project-nav" id="#tab2"/ >
-					<label class="project-nav" for="#tab2"><p>Teru Teru</p></label>
-					<input type="radio" name="project-nav" id="#tab3"/ >
-					<label class="project-nav" for="#tab3"><p>Personal Branding</p></label>
-					<input type="radio" name="project-nav" id="#tab4"/ >
-					<label class="project-nav" for="#tab4"><p>Graphics collection</p></label>
-				</div>
+				<ul id="projects" class="projects-nav-container">
+					<li class="project-nav " href="#tab1" ><p>Bloom VLE</p></label>
+					<li class="project-nav" href="#tab2" ><p>Teru Teru</p></label>
+					<li class="project-nav" href="#tab3" ><p>Personal Branding</p></li>
+					<!-- <li class="project-nav" href="#tab4" ><p>Graphics collection</p></li> -->
+				</ul>
 				<!-- / PROJECTS NAVIGATION -->
 			</main>
 			<!-- PROJECTS -->
 			<div class="projects-container">
 				<section id="tab1" class="tab1">
 					<ul>
-						<li class="section-item cover-img">
-							<h1 class="section-title">Bloom VLE</h1>
-							<p class="insection-text">
-								Bloom VLE (Virtual Learning Environment) is an ongoing project carried out by the Research &amp; Development team at CoSector,
-								University of London. Bloom is a service based on the open-source e-learning system Moodle. As an open-source
-								software, Moodle offers the freedom to customise and adapt it to every possible need. However, as we found this freedom
-								comes with the price of overall poor user experience.
-							</p>
-							<p class="insection-text">
-								Our goal as a team was to create a user centered VLE solution which provides relevant functionality, consistent look and feel,
-								and positive user experience out-of-the-box.
-							</p>
-							<p class="insection-text">
-								The discovery phase of the project started with undertaking an extensive market and user research. It included conducting over
-								200 surveys and 30 interviews (one-to-ane sessions and focus groups) with students, lecturers, learning technologists and
-								administrators. The research outputs were collated and used for building user personas, user journeys, design guidelines,
-								MVP and future development goals. Low and high fidelity prototypes were built and then tested with 20 students.
-							</p>
+						<li class="section-item" id="cover">
+							<h1 class="cover-title">Bloom VLE</h1>
+							<div class="insection">
+								<img class="cover-img" src="pix/bloom-intro.png" alt="bloom mockup" />
+								<p class="cover-text">
+									Bloom VLE (Virtual Learning Environment) is an ongoing project carried out by the Research &amp; Development team at CoSector,
+									University of London. Bloom is a service based on the open-source e-learning system Moodle. As an open-source
+									software, Moodle offers the freedom to customise and adapt it to every possible need. However, as we found this freedom
+									comes with the price of overall poor user experience.
+								</p>
+								<p class="cover-text">
+									Our goal as a team was to create a user-centered VLE solution which provides relevant functionality, consistent look and feel,
+									and positive user experience out-of-the-box.
+								</p>
+								<p class="cover-text">
+									The discovery phase of the project started with undertaking an extensive market and user research. It included conducting over
+									200 surveys and 30 interviews (one-to-one sessions and focus groups) with students, lecturers, learning technologists and
+									administrators. The research outputs were collated and used for building user personas, user journeys, design guidelines,
+									MVP and future development goals. Low and high fidelity prototypes were built and then tested with 20 students.
+								</p>
+							</div>
 						</li>
 						<li class="section-item">
 							<h1 class="section-title">Top Research Findings</h1>
 							<div class="insection-inverted">
-								<h2 class="insection-title inverted">What do students use their VLE for?</h2>
+								<h2 class="insection-title">What do students use their VLE for?</h2>
 								<ul class="thumbs">
 									<li>
-										<img class="thumb-img" src="pix/bloom-assign.png" alt="assignment icon" />
+										<div class="thumb-inner">
+											<img class="thumb-img" src="pix/bloom-assign.png" alt="assignment icon" />
+											<span>65<span class="percent">%</span></span>
+										</div>
 										<h3 class="thumb-title">Submit work</h3>
 									</li>
 									<li>
-										<img class="thumb-img" src="pix/bloom-course.png" alt="course icon" />
+										<div class="thumb-inner">
+											<img class="thumb-img" src="pix/bloom-course.png" alt="course icon" />
+											<span>59<span class="percent">%</span></span>
+										</div>
 										<h3 class="thumb-title">Download resources</h3>
 									</li>
 									<li>
-										<img class="thumb-img" src="pix/bloom-grade.png" alt="grade icon" />
+										<div class="thumb-inner">
+											<span>43<span class="percent">%</span></span>
+											<img class="thumb-img" src="pix/bloom-grade.png" alt="grade icon" />
+										</div>
 										<h3 class="thumb-title">Receive marks</h3>
+									</li>
+									<li>
+										<p class="insection-text">
+											The figures above were acquired from the surveys conducted. As it can be seen, not surprisingly, the most common activities
+											students perform are submitting assignments followed by downloading/accessing course materials and receiving their grades.
+											The percentage of students who reported using the VLE for other tasks plunges to 12% and less. Some of these are: contacting
+											friends/tutors (12%), collaboration (12%) and downloading/watching recorded lectures (6%).
+										</p>
+									</li>
+								</ul>
+								<h2 class="insection-title">Where is the problem?</h2>
+								<ul class="thumbs">
+									<li class="text-thumb">
+										<h3 class="thumb-title">Accessing and submitting assignments</h3>
+										<p class="insection-text">
+											Despite this being the most important task students complete within the VLE it is associated with a variety of serious issues. Many students reported that the system is too slow when processing uploads and system feedback is not clear enough. For example,  no upload progress indication and confusion around whether the submission was successful or not. Other issues include finding assignments is too complicated and deadline reminders are not correct or confusing. Some students talked about missing deadlines or submitting twice due to the poor notification system.
+										</p>
+									</li>
+									<li class="text-thumb">
+										<h3 class="thumb-title">Accessing grades and feedback</h3>
+										<p class="insection-text">
+											There isn't a single instance where students can easily find all of their grades. The journey to finding a grade in the VLE was described as a complicated task that feels very similar to physically going to a department in the university. Additionally, some lecturers said that many times students can't find their feedback and complain about not receiving any.
+										</p>
+									</li>
+									<li class="text-thumb">
+										<h3 class="thumb-title">Navigation and clutter</h3>
+										<p class="insection-text">
+											Students generally have high expectations when it comes to technology, being exposed to different software platforms on a daily basis. They expect to find what they need quickly and easily. However, this could be quite a challenge in Moodle. The system is clunky, cluttered and the navigation is complicated and confusing. Searching for a specific thing involves too many clicks, endless scrolling and wandering through too many pages.
+										</p>
+									</li>
+									<li class="text-thumb">
+										<h3 class="thumb-title">Accessing course materials</h3>
+										<p class="insection-text">
+											We found similar issues based on the complicated site navigation. However, students also report they find it frustrating that course pages look very different to each other and even inconsistent. A need for a clearer pattern of how information is presented was expressed.
+										</p>
+									</li>
+									<li class="text-thumb">
+										<h3 class="thumb-title">Inconsistency of lecturer usage</h3>
+										<p class="insection-text">
+											Lecturers' usage of the VLE greatly influences the overall student experience and satisfaction. Many students reported that they are not happy about the fact that some lecturers don't use Moodle enough, don't know how to use it or even refuse using it at all.
+										</p>
+									</li>
+									<li class="text-thumb">
+										<h3 class="thumb-title">Look and feel</h3>
+										<p class="insection-text">
+											Last, but not least, generally no one likes how the system looks like. The majority of users interviewed feel like it looks very old fashioned, clunky and boring.
+										</p>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li class="section-item">
-							<h2 class="insection-title">User Personas</h2>
-							<img class="project-img" src="pix/bloom-1.png" alt="6 user personas" />
+							<h1 class="section-title">Research Outputs</h1>
+							<div class="insection-inverted">
+								<h2 class="insection-title">User Personas</h2>
+								<ul class="thumbs img-row">
+									<li>
+										<img class="thumb-img" src="pix/persona-1.png" alt="first-year student" />
+										<div>
+											<h3 id="reveal" class="thumb-title">Bio</h3>
+											<p class="insection-text reveal">
+												Claudia is in her first year of BA English Literature. She is excited about being at university. She has spent time learning to use the VLE and has good digital literacy. However, she finds Moodle confusing and her lecturers all use it differently. She missed her first deadline because she didn’t see the notification, so she is wary of it now.
+											</p>
+										</div>
+									</li>
+									<li>
+										<img class="thumb-img" src="pix/persona-2.png" alt="continuing student" />
+										<div>
+											<h3 id="reveal" class="thumb-title">Bio</h3>
+											<p class="insection-text reveal">
+												Sam is very digitally literate, using programmes such as Premier, Final cut, Photoshop regularly, as well as Instagram and other social media to promote his work. However, it took a long time to get familiar with Moodle. Now he’s used to it and it’s fine. He uses college computers as well as personal devices and access to multimedia files is very important.
+											</p>
+										</div>
+									</li>
+									<li>
+										<img class="thumb-img" src="pix/persona-3.png" alt="distance learning student" />
+										<div>
+											<h3 id="reveal" class="thumb-title">Bio</h3>
+											<p class="insection-text reveal">
+												As an MA distance learning student, access to Moodle is vital; the whole course is structured around it. Working in a refugee camp means internet access is intermittent, so being able to work offline and find information quickly and easily when she can log-on is vital. Communication tools are also key- this includes discussions with classmates via forums and feedback on essays from tutors.
+											</p>
+										</div>
+									</li>
+									<li>
+										<img class="thumb-img" src="pix/persona-4.png" alt="further education student" />
+										<div>
+											<h3 id="reveal" class="thumb-title">Bio</h3>
+											<p class="insection-text reveal">
+												As a BTEC IT student, Martin uses Moodle regularly to look at course materials and upload work. He uses it when the teacher has posted something, or at a deadline/exam. He is guided by the teacher’s content. The navigation can be difficult and the high volume of content means lots of scrolling and it is easy to get lost or forget what he is looking for.
+											</p>
+										</div>
+									</li>
+									<li>
+										<img class="thumb-img" src="pix/persona-5.png" alt="higher education lecturer" />
+										<div>
+											<h3 id="reveal" class="thumb-title">Bio</h3>
+											<p class="insection-text reveal">
+												Jacob is a lecturer in Neuroimaging. He has been at the university for five years, he is familiar with Moodle and has a good idea of how his students like to use it. He is keen on features such as quizzes and forums, but has come to realise that students only use Moodle if they have to, so he is adapting the digital technology he uses in his teaching accordingly.
+											</p>
+										</div>
+									</li>
+									<li>
+										<img class="thumb-img" src="pix/persona-6.png" alt="learning technologist" />
+										<div>
+											<h3 id="reveal" class="thumb-title">Bio</h3>
+											<p class="insection-text reveal">
+												Stella has worked at the university as a Learning Technologist for three years, she is based in the Faculty of Arts and Humanities, which comprises 15 different departments, each of which uses Moodle differently.
+											</p>
+										</div>
+									</li>
+								</ul>
+								<h2 class="insection-title">Claudia: our first-year student</h2>
+								<img class="cover-img" src="pix/claudia.png" alt="first-year student" />
+								<h3 class="thumb-title">Bio</h3>
+								<p class="insection-text">
+									Claudia is in her first year of BA English Literature. She is excited about being at university. She has spent time learning to use the VLE and has good digital literacy. However, she finds Moodle confusing and her lecturers all use it differently. She missed her first deadline because she didn’t see the notification, so she is wary of it now.
+								</p>
+								<h3 class="thumb-title">Needs and Goals</h3>
+								<ul class="insection-text">
+									<li>Intuitive interface</li>
+									<li>Confirmation of assignment submission/ receipt</li>
+									<li>Relevant notifications</li>
+									<li>Learn to use the VLE quickly and easily- reduce time needed as it could be spent learning</li>
+									<li>VLE to accurately reflect calendar and deadlines</li>
+								</ul>
+								<h2 class="insection-title">User Journeys</h2>
+								<img class="project-img" src="pix/bloom-3.png" alt="placeholder image" />
+							</div>
 						</li>
 						<li class="section-item">
-							<h2 class="insection-title">Claudia: our first-year student</h2>
-							<p class="insection-text">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</p>
-							<img class="project-img" src="pix/bloom-2.png" alt="Claudia persona" />
-						</li>
-						<li class="section-item">
-							<h2 class="insection-title">User Journeys</h2>
-							<img class="project-img" src="pix/bloom-3.png" alt="placeholder image" />
+							<h1 class="section-title">What we achieved</h1>
+							<div class="insection-inverted">
+								<h2 class="insection-title">Release Goals</h2>
+								<p class="insection-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								<h2 class="insection-title">Features Implementation</h2>
+								<p class="insection-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								<a href="https://1li1ji.axshare.com" target="_blank">Prototype</a>
+							</div>
 						</li>
 						<li class="section-item">
 							<h2 class="insection-title">Bloom Custom Icon Font</h2>
+							<p class="insection-text">
 							<img class="project-img" src="pix/bloom-4.png" alt="placeholder image" />
-						</li>
-						<li class="section-item">
 							<h2 class="insection-title">Activity Icons</h2>
 							<img class="project-img" src="pix/bloom-5.png" alt="placeholder image" />
 						</li>
@@ -181,7 +313,7 @@
 				</section>
 
 				<section id="tab2" class="tab2">
-					<img class="project-img cover-img" src="pix/teru-1.png" alt="placeholder image" />
+					<img class="project-img" src="pix/teru-1.png" alt="placeholder image" />
 					<img class="project-img" src="pix/teru-2.png" alt="placeholder image" />
 					<img class="project-img" src="pix/teru-3.png" alt="placeholder image" />
 					<img class="project-img" src="pix/teru-4.png" alt="placeholder image" />
@@ -195,7 +327,7 @@
 				</section>
 
 				<section id="tab3" class="tab3">
-					<img class="project-img cover-img" src="pix/brand-1.png" alt="placeholder image" />
+					<img class="project-img" src="pix/brand-1.png" alt="placeholder image" />
 					<img class="project-img" src="pix/brand-2.gif" alt="placeholder image" />
 					<img class="project-img" src="pix/brand-3.png" alt="placeholder image" />
 					<img class="project-img" src="pix/brand-4.png" alt="placeholder image" />
@@ -203,10 +335,10 @@
 					<img class="project-img" src="pix/brand-6.png" alt="placeholder image" />
 				</section>
 
-				<section id="tab4" class="tab4">
+				<!-- <section id="tab4" class="tab4">
 					<img class="project-img cover-img" src="pix/misc-1.png" alt="placeholder image" />
 					<img class="project-img" src="pix/misc-2.png" alt="placeholder image" />
-				</section>
+				</section> -->
 
 			</div>
 			<nav>
