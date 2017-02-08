@@ -140,6 +140,9 @@ body{
   width: 100vw;
   background: $brand-primary;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 
 .welcome{
@@ -181,14 +184,15 @@ body{
 }
 
 .site-content{
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
   // display: flex;
   // flex-direction: column;
   // justify-content: space-between;
   position: relative;
   @include media(xs){
     // position: relative;
-    height: 100%;
+    // height: auto;
     // padding-bottom: 0;
     // margin: auto 0;
     // justify-content: flex-start;
@@ -198,8 +202,8 @@ body{
 }
 
 .site-header{
-  background:$brand-primary;
   padding:0.5rem;
+  background-color: $brand-primary;
 
 // SITE NAVIGATION
   .site-navigation{
@@ -213,26 +217,24 @@ body{
         display: none;
       }
       .brand-mini{
+
+      }
+      .logo-mini{
         width: 80px;
         height: 100%;
+        display: inline-block;
       }
       .name{
         color: $color-inverted;
         text-rendering: optimizeLegibility;
         letter-spacing: 1px;
-        float: left;
         text-transform: uppercase;
         font-weight: 900;
         font-size: $font-size-md;
         line-height: $font-size-md;
-        &:before{
-          content: "";
-          padding-left: $font-size-md;
-          padding-right: 5px;
-          margin-right: 1rem;
-          border: 3px solid $color-inverted;
-          background-color: $brand-secondary;
-        }
+        display: inline-block;
+        margin-top: 0;
+        vertical-align: top;
       }
       .top-nav{
         float:right;
@@ -242,19 +244,25 @@ body{
         }
         .nav {
           display: inline-block;
-          padding: 0 1rem 0.8rem 1rem;
-          margin-left: $font-size-md;
-          border-bottom: 2px solid transparent;
-          @include transition(all .3s ease);
           @include media(xs){
             padding:0 0.5rem;
             margin-left: $font-size-xs;
           }
           a{
-            font-size: 1.25rem;
-          }
-          &:hover{
-            border-bottom: 2px solid $brand-secondary;
+            padding: 1rem 1.5rem;
+            margin-left: $font-size-lg;
+            font-size: $font-size-md;
+            border: 3px solid $brand-secondary;
+            @include transition(all .25s ease);
+            &:after{
+              content: "\f178";
+              font-family: FontAwesome;
+              margin-left: 6px;
+            }
+            &:hover{
+              background: $brand-secondary;
+              color: $color-inverted;
+            }
           }
         }
       }
@@ -315,7 +323,7 @@ body{
     // z-index: 1;
     width: 70%;
     display: inline-block;
-    h1{
+    .name{
       font-weight: 900;
       display: inline-block;
       font-size: $font-size-xl;
@@ -323,30 +331,41 @@ body{
       color: $brand-secondary;
       width: 100%;
       vertical-align: top;
-      .blurred{
-        margin-left: -3px;
-        cursor: pointer;
-        display: inline-block;
-        color: transparent;
-        border-bottom: 5px solid transparent;
-        @include transition(all .3s ease);
-        text-shadow: 0 0 10px $brand-secondary;
+    }
+    .blurred{
+      font-size: $font-size-lg;
+      margin-left: -3px;
+      cursor: pointer;
+      display: inline-block;
+      color: transparent;
+      border-bottom: 5px solid transparent;
+      @include transition(all .3s ease);
+      text-shadow: 0 0 10px $brand-secondary;
+    }
+    .blurred_hover{
+      color: $color-inverted;
+      text-shadow: 0 0 0 transparent;
+      // @include animation('blur 4s 0');
+    }
+    // .animated{
+    //   @include animation('blur 4s infinite');
+    // }
+    .blurb-content{
+      font-size: $font-size-lg;
+      @include transition(all .3s ease);
+      color: $brand-secondary;
+    }
+    .blurb-blurred{
+      color: transparent;
+      text-shadow: 0 0 10px $brand-secondary;
+      opacity: 0.7;
+    }
+    @include media(xs){
+      .name{
+        display: none;
       }
-      .blurred_hover{
-        color: $color-inverted;
-        text-shadow: 0 0 0 transparent;
-        // @include animation('blur 4s 0');
-      }
-      // .animated{
-      //   @include animation('blur 4s infinite');
-      // }
-      .blurb-content{
-        @include transition(all .3s ease);
-      }
-      .blurb-blurred{
-        color: transparent;
-        text-shadow: 0 0 10px $brand-secondary;
-        opacity: 0.7;
+      .blurred, .blurb-content{
+        font-size: $font-size-xl;
       }
     }
   }
@@ -466,68 +485,82 @@ body{
   }
 }
 
-// PROJECT NAVIGATION
-//
-.projects-nav-container{
-  // align-self: flex-end;
-  display: flex;
-  // flex-wrap: wrap;
-  flex-direction: row;
-  width: 100%;
-  height: auto;
-  max-height: 3.8rem;
-  z-index: 9;
-  // min-width:3rem;
-  // height: 3.5rem;
-  // align-content: space-between;
-  // background: $brand-secondary;
-  color: $color-inverted;
-  position: absolute;
-  bottom: 0;
-  // @include media(xs){
-  //   position: absolute;
-  //   bottom: 0;
-  // };
-  .project-nav{
-    // position: relative;
-    // flex-basis: 25%;
-    width:100%;
-    color: rgba(255, 255, 255, 0.6);
-    background-color: lighten($brand-secondary, 10%);
-    @include transition(all .3s ease);
-    &:hover{
-      background-color: $brand-secondary;
-      color: rgba(255, 255, 255, 1);
-    }
-    p{
-      color: inherit;
-      text-align: center;
-      @include font($font-size-root, 200);
-      padding: 1rem;
-    }
-  }
-}
-.active {
-  background-color: $brand-secondary !important;
-}
 
 // PROJECTS CONTAINER
 //
 .projects-container{
   @include column-width(12);
-  display: none;
-  // display: flex;
-  // flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 0;
+  position: absolute;
+  right: 0;
+  background: $brand-secondary;
+  @include transition(all .25s ease-out);
   // .project-section{
     img{
       @include column-width(12);
     }
   // }
 }
+// #open-projects{
+//   display: block;
+//   width: 100%;
+//   background: $brand-secondary;
+//   color: $color-inverted;
+// }
+// PROJECT NAVIGATION
+//
+.projects-nav-container{
+  // display: flex;
+  flex-direction: row;
+  display: none;
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  // max-height: 3.8rem;
+  z-index: 9;
+  color: $color-inverted;
+  background-color: $brand-secondary;
+  .project-nav{
+    // position: relative;
+    // flex-basis: 25%;
+    width:100%;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    @include transition(all .3s ease);
+    &:hover{
+      color: rgba(255, 255, 255, 1);
+      p{
+        border-bottom: 3px solid $color-inverted;
+      }
+    }
+    p{
+      color: inherit;
+      text-align: center;
+      @include font($font-size-root, 200);
+      padding: 0.8rem;
+      border: 1px solid transparent;
+      border-bottom: 3px solid transparent;
+      @include transition(border-color .25s ease);
+    }
+    &.active {
+      // background-color: $brand-secondary !important;
+      p{
+        border: 3px solid $color-inverted;
+      }
+    }
+  }
+}
+
 section{
-   display: none;
-   color: rgba(255, 255, 255, 1);
-   background-color: $brand-secondary;
+  //  display: flex;
+  flex-direction: column;
+  display: none;
+  opacity: 0;
+  color: rgba(255, 255, 255, 1);
+  background-color: $brand-secondary;
+  @include transition(opacity 1s ease-out);
    .section-title{
      font-size: $font-size-lg;
      text-align: center;
@@ -756,10 +789,17 @@ section{
      margin-left: 1.5rem;
    }
  }
- .show-project{
-   display: flex;
-   flex-direction: column;
- }
+.show-project{
+  display: flex;
+}
+.visibility{
+  opacity: 1;
+}
+
+ .slide-projects{
+   width: 100%;
+   z-index: 100;
+}
 
 
 

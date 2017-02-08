@@ -78,6 +78,9 @@ body {
   width: 100vw;
   background: #ea444f;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 
 .welcome {
@@ -119,18 +122,14 @@ body {
 }
 
 .site-content {
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
   position: relative;
-}
-@media (max-width: 500px) {
-  .site-content {
-    height: 100%;
-  }
 }
 
 .site-header {
-  background: #ea444f;
   padding: 0.5rem;
+  background-color: #ea444f;
 }
 .site-header .site-navigation {
   padding-top: 0.8rem;
@@ -141,27 +140,22 @@ body {
 .site-header .site-navigation ul li:first-child {
   display: none;
 }
-.site-header .site-navigation ul .brand-mini {
+.site-header .site-navigation ul .logo-mini {
   width: 80px;
   height: 100%;
+  display: inline-block;
 }
 .site-header .site-navigation ul .name {
   color: white;
   text-rendering: optimizeLegibility;
   letter-spacing: 1px;
-  float: left;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 1.25rem;
   line-height: 1.25rem;
-}
-.site-header .site-navigation ul .name:before {
-  content: "";
-  padding-left: 1.25rem;
-  padding-right: 5px;
-  margin-right: 1rem;
-  border: 3px solid white;
-  background-color: #451a2a;
+  display: inline-block;
+  margin-top: 0;
+  vertical-align: top;
 }
 .site-header .site-navigation ul .top-nav {
   float: right;
@@ -172,14 +166,6 @@ body {
 }
 .site-header .site-navigation ul .top-nav .nav {
   display: inline-block;
-  padding: 0 1rem 0.8rem 1rem;
-  margin-left: 1.25rem;
-  border-bottom: 2px solid transparent;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 @media (max-width: 500px) {
   .site-header .site-navigation ul .top-nav .nav {
@@ -188,10 +174,24 @@ body {
   }
 }
 .site-header .site-navigation ul .top-nav .nav a {
+  padding: 1rem 1.5rem;
+  margin-left: 2.25rem;
   font-size: 1.25rem;
+  border: 3px solid #451a2a;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
-.site-header .site-navigation ul .top-nav .nav:hover {
-  border-bottom: 2px solid #451a2a;
+.site-header .site-navigation ul .top-nav .nav a:after {
+  content: "\f178";
+  font-family: FontAwesome;
+  margin-left: 6px;
+}
+.site-header .site-navigation ul .top-nav .nav a:hover {
+  background: #451a2a;
+  color: white;
 }
 @media (max-width: 500px) {
   .site-header .site-navigation ul li:first-child {
@@ -247,7 +247,7 @@ body {
   width: 70%;
   display: inline-block;
 }
-.cv-container .blurb h1 {
+.cv-container .blurb .name {
   font-weight: 900;
   display: inline-block;
   font-size: 3.375rem;
@@ -256,7 +256,8 @@ body {
   width: 100%;
   vertical-align: top;
 }
-.cv-container .blurb h1 .blurred {
+.cv-container .blurb .blurred {
+  font-size: 2.25rem;
   margin-left: -3px;
   cursor: pointer;
   display: inline-block;
@@ -269,21 +270,31 @@ body {
   transition: all 0.3s ease;
   text-shadow: 0 0 10px #451a2a;
 }
-.cv-container .blurb h1 .blurred_hover {
+.cv-container .blurb .blurred_hover {
   color: white;
   text-shadow: 0 0 0 transparent;
 }
-.cv-container .blurb h1 .blurb-content {
+.cv-container .blurb .blurb-content {
+  font-size: 2.25rem;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  color: #451a2a;
 }
-.cv-container .blurb h1 .blurb-blurred {
+.cv-container .blurb .blurb-blurred {
   color: transparent;
   text-shadow: 0 0 10px #451a2a;
   opacity: 0.7;
+}
+@media (max-width: 500px) {
+  .cv-container .blurb .name {
+    display: none;
+  }
+  .cv-container .blurb .blurred, .cv-container .blurb .blurb-content {
+    font-size: 3.375rem;
+  }
 }
 .cv-container .blurb-inner {
   position: relative;
@@ -404,21 +415,38 @@ body {
   color: white;
 }
 
-.projects-nav-container {
+.projects-container {
+  width: 99.996%;
   display: flex;
+  flex-direction: column;
+  width: 0;
+  position: absolute;
+  right: 0;
+  background: #451a2a;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+.projects-container img {
+  width: 99.996%;
+}
+
+.projects-nav-container {
   flex-direction: row;
+  display: none;
+  opacity: 0;
   width: 100%;
   height: auto;
-  max-height: 3.8rem;
   z-index: 9;
   color: white;
-  position: absolute;
-  bottom: 0;
+  background-color: #451a2a;
 }
 .projects-nav-container .project-nav {
   width: 100%;
   color: rgba(255, 255, 255, 0.6);
-  background-color: #6a2841;
+  padding: 10px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -426,33 +454,40 @@ body {
   transition: all 0.3s ease;
 }
 .projects-nav-container .project-nav:hover {
-  background-color: #451a2a;
   color: white;
+}
+.projects-nav-container .project-nav:hover p {
+  border-bottom: 3px solid white;
 }
 .projects-nav-container .project-nav p {
   color: inherit;
   text-align: center;
   font-size: 13px;
   font-weight: 200;
-  padding: 1rem;
+  padding: 0.8rem;
+  border: 1px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: border-color 0.25s ease;
+  -moz-transition: border-color 0.25s ease;
+  -ms-transition: border-color 0.25s ease;
+  -o-transition: border-color 0.25s ease;
+  transition: border-color 0.25s ease;
 }
-
-.active {
-  background-color: #451a2a !important;
-}
-
-.projects-container {
-  width: 99.996%;
-  display: none;
-}
-.projects-container img {
-  width: 99.996%;
+.projects-nav-container .project-nav.active p {
+  border: 3px solid white;
 }
 
 section {
+  flex-direction: column;
   display: none;
+  opacity: 0;
   color: white;
   background-color: #451a2a;
+  -webkit-transition: opacity 1s ease-out;
+  -moz-transition: opacity 1s ease-out;
+  -ms-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
+  transition: opacity 1s ease-out;
 }
 section .section-title {
   font-size: 2.25rem;
@@ -692,7 +727,15 @@ section ul.insection-text {
 
 .show-project {
   display: flex;
-  flex-direction: column;
+}
+
+.visibility {
+  opacity: 1;
+}
+
+.slide-projects {
+  width: 100%;
+  z-index: 100;
 }
 
 .bottom-nav {
