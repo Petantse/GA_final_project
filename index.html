@@ -20,7 +20,7 @@
 			<div class="welcome">
 				<div>
 					<h3 class="welcome-message"><span>Hello there!</span>
-						Thanks for visiting. This website is a work-in-progress, so please forgive its unpolished state. You are welcome to have a look around and get in touch!
+						This site is work-in-progress, so please, excuse the unpolished state. Thanks for visiting and enjoy!
 					</h3>
 					<p class="fa fa-times" id="close" aria-hidden="true"></p>
 				</div>
@@ -36,10 +36,13 @@
 								</div>
 							</li>
 							<li class="name">Pet Stoyanova</li>
-							<ul class="top-nav">
-								<li id="work" class="nav"><a  href="#projects">Work</a></li>
-								<!-- <li class="nav"><a  href="#">About</a></li> -->
-							</li>
+							<!-- <li><a id="work" class="top-nav" href="#projects-container">Projects</a></li> -->
+							<!-- <ul class="top-nav">
+								<li id="work" class="nav">
+									<a  href="#projects">Projects</a>
+								</li>
+								<li class="nav"><a  href="#">About</a></li>
+							</ul> -->
 						</ul>
 					</nav>
 				</header>
@@ -54,37 +57,40 @@
 					<!-- BLURB -->
 					<div class="blurb">
 						<div class="blurb-inner">
-							<h1><span class="blurred animated">Designer</span><span class="blurb-content">, front-end developer, illustration enthusiast &amp; orchid hoarder.</span></h1>
-							<!-- SKILLS PANE -->
-							<div class="skills-container">
-								<div class="selector"></div>
-								<div id="skills" class="skills_hidden">
-									<p>
-										What kind of designer am I? Lines could be a bit blurry indeed.
-									</p>
-									<p>
-										I am a multidisciplinary designer with expertise in visual design and inclined towards UX &amp; UI design.
-									</p>
-									<p>
-										Within my current role in the Research &amp; Development team at CoSector, University of London , I've undertaken
-										various responsibilities. These range from assisting in interviews and testing sessions with users,
-										compiling research outputs, building personas, user journeys and flows, building low and high fidelity
-										prototypes, UI design and technical implementation.
-									</p>
-									<p>
-										I am particularly intersted in the EdTech and Games industries and companies with higher goals than
-										just generating revenue. I like to be part of a team aspiring to create something awesome
-										rather than just build software.
-									</p>
-									<ul class="skills-inner-content">
-										<li><h3>50%</h3>Visual and UI design</li>
-										<li><h3>30%</h3>Research &amp; UX design</li>
-										<li><h3>20%</h3>Front-end development</li>
-									</ul>
-									<a class="full-resume" href="https://uk.linkedin.com/in/petstoyanova">Full resume</a>
+							<h1 class="name-big">Pet Stoyanova</h1>
+							<h2><span id="selector" class="blurred animated">designer</span>
+								<!-- SKILLS PANE -->
+								<div class="skills-container">
+									<!-- <div class="selector"></div> -->
+									<div id="skills" class="skills_hidden">
+										<p class="fa fa-times" id="close-skills" aria-hidden="true"></p>
+										<p>
+											What kind of designer am I? Lines could be a bit blurry indeed.
+										</p>
+										<p>
+											I am a multidisciplinary designer with expertise in visual design and inclined towards UX &amp; UI design.
+										</p>
+										<p>
+											Within my current role in the Research &amp; Development team at CoSector, University of London , I've undertaken
+											various responsibilities. These range from assisting in interviews and testing sessions with users,
+											compiling research outputs, building personas, user journeys and flows, building low and high fidelity
+											prototypes, UI design and technical implementation.
+										</p>
+										<p>
+											I am particularly intersted in the EdTech and Games industries and companies with higher goals than
+											just generating revenue. I like to be part of a team aspiring to create something awesome
+											rather than just build software.
+										</p>
+										<ul class="skills-inner-content">
+											<li><h3>50%</h3>Visual and UI design</li>
+											<li><h3>30%</h3>Research &amp; UX design</li>
+											<li><h3>20%</h3>Front-end development</li>
+										</ul>
+										<!-- <a class="full-resume" href="https://uk.linkedin.com/in/petstoyanova">Full resume</a> -->
+									</div>
 								</div>
-							</div>
-							<!-- /SKILLS PANE -->
+								<!-- /SKILLS PANE -->
+								<span class="blurb-content">, illustration enthusiast &amp; orchid hoarder.</span></h2>
 						</div>
 						<!-- SOCIAL ICONS -->
 						<ul class="social-icons">
@@ -103,18 +109,19 @@
 
 				</div>
 					<!-- /ABOUT -->
+				<a id="work" class="fa fa-angle-down arrow-down" href="#projects-container"></a>
+			</main>
+			<!-- PROJECTS -->
+			<div id="projects-container" class="projects-container">
 				<!-- PROJECTS NAVIGATION -->
-				<ul id="projects" class="projects-nav-container">
-					<li class="project-nav " href="#tab1" ><p>Bloom VLE</p></label>
+				<ul id="projects-nav-container" class="projects-nav-container">
+					<li class="project-nav active" href="#tab1" ><p>Bloom VLE</p></label>
 					<li class="project-nav" href="#tab2" ><p>Teru Teru</p></label>
 					<li class="project-nav" href="#tab3" ><p>Personal Branding</p></li>
 					<!-- <li class="project-nav" href="#tab4" ><p>Graphics collection</p></li> -->
 				</ul>
 				<!-- / PROJECTS NAVIGATION -->
-			</main>
-			<!-- PROJECTS -->
-			<div class="projects-container">
-				<section id="tab1" class="tab1">
+				<section id="tab1" class="tab1 show-project">
 					<ul>
 						<li class="section-item" id="cover">
 							<h1 class="cover-title">Bloom VLE</h1>
@@ -127,14 +134,15 @@
 									comes with the price of overall poor user experience.
 								</p>
 								<p class="cover-text">
-									Our goal as a team was to create a user-centered VLE solution which provides relevant functionality, consistent look and feel,
-									and positive user experience out-of-the-box.
-								</p>
-								<p class="cover-text">
 									The discovery phase of the project started with undertaking an extensive market and user research. It included conducting over
 									200 surveys and 30 interviews (one-to-one sessions and focus groups) with students, lecturers, learning technologists and
 									administrators. The research outputs were collated and used for building user personas, user journeys, design guidelines,
 									MVP and future development goals. Low and high fidelity prototypes were built and then tested with 20 students.
+								</p>
+								<h2 class="insection-title">Project Goal</h2>
+								<p class="cover-text">
+									Our goal as a team was to create a user-centered VLE solution which provides relevant functionality, consistent look and feel,
+									and positive user experience out-of-the-box.
 								</p>
 							</div>
 						</li>
@@ -208,7 +216,7 @@
 									<li class="text-thumb">
 										<h3 class="thumb-title">Look and feel</h3>
 										<p class="insection-text">
-											Last, but not least, generally no one likes how the system looks like. The majority of users interviewed feel like it looks very old fashioned, clunky and boring.
+											Last, but not least, generally no one likes how the system looks like. The majority of users interviewed feel like it looks old-dated, clunky and boring.
 										</p>
 									</li>
 								</ul>
@@ -218,6 +226,7 @@
 							<h1 class="section-title">Research Outputs</h1>
 							<div class="insection-inverted">
 								<h2 class="insection-title">User Personas</h2>
+								<p class="insection-text">The research outputs were used to build a range of personas reflecting the needs, goals and motivations of Moodle users within Higher Education and Further Education.</p>
 								<ul class="thumbs img-row">
 									<li>
 										<img class="thumb-img" src="pix/persona-1.png" alt="first-year student" />
@@ -274,40 +283,73 @@
 										</div>
 									</li>
 								</ul>
-								<h2 class="insection-title">Claudia: our first-year student</h2>
-								<img class="cover-img" src="pix/claudia.png" alt="first-year student" />
-								<h3 class="thumb-title">Bio</h3>
-								<p class="insection-text">
-									Claudia is in her first year of BA English Literature. She is excited about being at university. She has spent time learning to use the VLE and has good digital literacy. However, she finds Moodle confusing and her lecturers all use it differently. She missed her first deadline because she didn’t see the notification, so she is wary of it now.
-								</p>
-								<h3 class="thumb-title">Needs and Goals</h3>
-								<ul class="insection-text">
-									<li>Intuitive interface</li>
-									<li>Confirmation of assignment submission/ receipt</li>
-									<li>Relevant notifications</li>
-									<li>Learn to use the VLE quickly and easily- reduce time needed as it could be spent learning</li>
-									<li>VLE to accurately reflect calendar and deadlines</li>
-								</ul>
-								<h2 class="insection-title">User Journeys</h2>
-								<img class="project-img" src="pix/bloom-3.png" alt="placeholder image" />
 							</div>
 						</li>
 						<li class="section-item">
-							<h1 class="section-title">What we achieved</h1>
+							<h1 class="section-title">First Release</h1>
+							<p class="cover-text">For the first release of Bloom VLE, we chose to focus on 1st-year students as they are usually first-time users as well. For this group, the initial interaction with the system has a great impact on the overall student experience and how they perceive the institution in the future.
+							<p class="cover-text">Continuing students generally felt that by the second year they had learnt how to cope with Moodle. For us, it was crucial to reduce that learning curve through redesigning the user journeys. This includes reducing the number of clicks, simplifying the paths to completing certain tasks, reducing the clutter and scrolling across the site and create onboarding tours as a replacement to dedicated training sessions.
+Last, but not least, we aimed at designing a user interface that looks and feels contemporary and engaging but can also be easily configured depending on the institution's specific needs.</p>
 							<div class="insection-inverted">
-								<h2 class="insection-title">Release Goals</h2>
-								<p class="insection-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								<h2 class="insection-title">Features Implementation</h2>
-								<p class="insection-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								<a href="https://1li1ji.axshare.com" target="_blank">Prototype</a>
+								<h2 class="insection-title">Claudia: our first-year student</h2>
+								<img class="cover-img" src="pix/claudia.png" alt="first-year student" />
+								<div class="bio">
+									<h3 class="thumb-title">Bio</h3>
+									<p class="insection-text">
+										Claudia is in her first year of BA English Literature. She is excited about being at university. She has spent time learning to use the VLE and has good digital literacy. However, she finds Moodle confusing and her lecturers all use it differently. She missed her first deadline because she didn’t see the notification, so she is wary of it now.
+									</p>
+									<h3 class="thumb-title">Needs</h3>
+									<ul class="insection-text">
+										<li>Intuitive interface</li>
+										<li>Confirmation of assignment submission/ receipt</li>
+										<li>Relevant notifications</li>
+										<li>Learn to use the VLE quickly and easily- reduce time that could be spent learning</li>
+										<li>VLE to accurately reflect calendar and deadlines</li>
+										<li>Third party software integrations (Turnitin, Panopto, Google Drive, RefMe, JSTOR, Dropbox, Office 365)</li>
+									</ul>
+									<h3 class="thumb-title">Frustrations</h3>
+									<ul class="insection-text">
+										<li>Auto-logout</li>
+										<li>Receiving grades (confusion over where to find grades and feedback)</li>
+										<li>Incorrect assignment notifications</li>
+										<li>Difficult submission system</li>
+										<li>Difference in how some faculty lecturers use the VLE</li>
+									</ul>
+									<h3 class="thumb-title">When and Where?</h3>
+									<p class="insection-text">Most days, evenings and weekends. However, the highest usage is near exams and deadlines.</p>
+									<h3 class="thumb-title">Devices</h3>
+									<p class="insection-text">Claudia accesses Moodle mostly on her laptop, but sometimes on the library computers as well. She also uses her tablet/ smartphone to read course materials while writing her assignments on the laptop.</p>
+								</div>
+								<h2 class="insection-title">Minimum Viable Product</h2>
+								<ul class="insection-text">
+									<li>Produce a theme ready for Beta testing</li>
+									<li>Improve access to grades and feedback</li>
+									<li>Improve access to assignments and submission process</li>
+									<li>Implement configurable settings</li>
+								</ul>
+								<h2 class="insection-title">User Stories</h2>
+								<img class="project-img" src="pix/bloom-3.png" alt="placeholder image" />
+								<img class="project-img" src="pix/bloom-4.png" alt="placeholder image" />
+								<img class="project-img" src="pix/bloom-5.png" alt="placeholder image" />
+							</div>
+						</li>
+						<li class="section-item">
+							<h1 class="section-title">Deliverables</h1>
+							<p class="cover-text">So far the Research and Development team has produced a default Bloom theme for Moodle and 2 user facing plugins: Bloom Information Panel and Bloom Agenda panel.</p>
+							<div class="insection-inverted">
+								<h2 class="insection-title">Initial Design Process</h2>
+								<p class="insection-text">We started by breaking down current task flows and aimed at reducing the steps of completing a task to 5 clicks per task.</p>
+								<a class="link" href="https://1li1ji.axshare.com" target="_blank">Prototype</a>
+								<h2 class="insection-title">Implemented Features</h2>
+								<p class="insection-text"></p>
 							</div>
 						</li>
 						<li class="section-item">
 							<h2 class="insection-title">Bloom Custom Icon Font</h2>
 							<p class="insection-text">
-							<img class="project-img" src="pix/bloom-4.png" alt="placeholder image" />
+							<img class="project-img" src="pix/bloom-6.png" alt="placeholder image" />
 							<h2 class="insection-title">Activity Icons</h2>
-							<img class="project-img" src="pix/bloom-5.png" alt="placeholder image" />
+							<img class="project-img" src="pix/bloom-7.png" alt="placeholder image" />
 						</li>
 					</ul>
 				</section>
