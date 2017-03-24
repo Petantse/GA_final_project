@@ -9,9 +9,11 @@ $( document ).ready(function() {
 
     $(window).click(function(){
       $('.welcome').fadeOut(500);
-      $('#selector').removeClass('blurred_hover').addClass('animated');
-      $('#skills').slideUp(300);
-      $('.blurb-content').delay(300).fadeIn(300);
+      // if ($('#selector').hasClass('blurred_hover')){
+      //   $('#selector').removeClass('blurred_hover').addClass('animated');
+      //   $('#skills').slideUp(300);
+      //   $('.blurb-content').delay(300).fadeIn(300);
+      // }
     });
 
     // // show projects container
@@ -85,7 +87,7 @@ $( document ).ready(function() {
       //   });
       // }
 
-  $('#selector').mouseenter(function(){
+  $('#selector').click(function(){
     // event.preventDefault();
     $(this).addClass('blurred_hover').removeClass('animated');
     $('.blurb-content').fadeOut(200);
